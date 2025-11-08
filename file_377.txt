@@ -1,0 +1,640 @@
+                                                                                          FUN_075150:075186(c), \
+                                                                                          FUN_075658:0756e8(c), \
+                                                                                          FUN_075658:07570c(c), \
+                                                                                          FUN_075658:07580e(c), \
+                                                                                          FUN_075658:075830(c)  \
+          0603c4 40 ed           cmp        param_3,param_2\
+          0603c6 fd 08           jmpr       cc_ULE,LAB_0603d8\
+          0603c8 f6 fc 0e fe     mov        MDL,param_1                                      = FFh\
+          0603cc f6 fd 0c fe     mov        MDH,param_2                                      = FFh\
+          0603d0 7b ee           divlu      param_3\
+          0603d2 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0603d6 db 00           rets\
+                             LAB_0603d8                                      XREF[1]:     0603c6(j)  \
+          0603d8 e6 f4 ff ff     mov        r4,#0xffff\
+          0603dc db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0603de(ushort param_1, ushort param_\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+             ushort            r14:2          param_3\
+                             FUN_0603de                                      XREF[6]:     FUN_011b72:011da2(c), \
+                                                                                          FUN_011b72:011df6(c), \
+                                                                                          FUN_012d3a:0130f2(c), 02700a(c), \
+                                                                                          FUN_0364ba:03655c(c), \
+                                                                                          FUN_075658:07583a(c)  \
+          0603de 70 ee           or         param_3,param_3\
+          0603e0 2d 1a           jmpr       cc_EQ,LAB_060416\
+          0603e2 9a fd 0d f0     jnb        param_2.0xf,LAB_060400\
+          0603e6 81 d0           neg        param_2\
+          0603e8 1b cd           mulu       param_1,param_2\
+          0603ea 7b ee           divlu      param_3\
+          0603ec 4d 06           jmpr       cc_V,LAB_0603fa\
+          0603ee f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0603f2 8a f4 02 f0     jb         r4.0xf,LAB_0603fa\
+          0603f6 81 40           neg        r4\
+          0603f8 db 00           rets\
+                             LAB_0603fa                                      XREF[3]:     0603ec(j), 0603f2(j), 06041a(j)  \
+          0603fa e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          0603fe db 00           rets\
+                             LAB_060400                                      XREF[1]:     0603e2(j)  \
+          060400 1b cd           mulu       param_1,param_2\
+          060402 7b ee           divlu      param_3\
+          060404 4d 05           jmpr       cc_V,LAB_060410\
+          060406 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06040a 8a f4 01 f0     jb         r4.0xf,LAB_060410\
+          06040e db 00           rets\
+                             LAB_060410                                      XREF[4]:     060404(j), 06040a(j), 060418(j), \
+                                                                                          06041e(j)  \
+          060410 e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          060414 db 00           rets\
+                             LAB_060416                                      XREF[1]:     0603e0(j)  \
+          060416 70 cc           or         param_1,param_1\
+          060418 2d fb           jmpr       cc_EQ,LAB_060410\
+          06041a 8a fd ee f0     jb         param_2.0xf,LAB_0603fa\
+          06041e 0d f8           jmpr       cc_UC,LAB_060410\
+          060420 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined4 __stdcall FUN_060422(ushort param_1, ushort p\
+             undefined4        r5:2,r4:2      <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+             ushort            r14:2          param_3\
+                             FUN_060422                                      XREF[1]:     FUN_015084:015702(c)  \
+          060422 1b de           mulu       param_2,param_3\
+          060424 46 06 00 00     cmp        MDH,#0x0                                         = FFh\
+          060428 3d 09           jmpr       cc_NE,LAB_06043c\
+          06042a f2 f5 0e fe     mov        r5,MDL                                           = FFh\
+          06042e 1b ce           mulu       param_1,param_3\
+          060430 02 f5 0c fe     add        r5,MDH                                           = FFh\
+          060434 8d 03           jmpr       cc_C,LAB_06043c\
+          060436 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06043a db 00           rets\
+                             LAB_06043c                                      XREF[2]:     060428(j), 060434(j)  \
+          06043c e6 f5 ff ff     mov        r5,#0xffff\
+          060440 e6 f4 ff ff     mov        r4,#0xffff\
+          060444 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined4 __stdcall FUN_060446(ushort param_1, ushort p\
+             undefined4        r5:2,r4:2      <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+             ushort            r14:2          param_3\
+                             FUN_060446                                      XREF[5]:     FUN_0711bc:0712e8(c), \
+                                                                                          FUN_0711bc:071558(c), \
+                                                                                          FUN_0711bc:07157c(c), \
+                                                                                          FUN_0717aa:0717c6(c), \
+                                                                                          FUN_0717aa:0717d8(c)  \
+          060446 4a fd 88 f6     bmov       MDC.0x6,param_2.0xf                              = FFh\
+          06044a 9a fd 04 f0     jnb        param_2.0xf,LAB_060456\
+          06044e 91 c0           cpl        param_1\
+          060450 91 d0           cpl        param_2\
+          060452 08 c1           add        param_1,#0x1\
+          060454 18 d0           addc       param_2,#0x0\
+                             LAB_060456                                      XREF[1]:     06044a(j)  \
+          060456 1b de           mulu       param_2,param_3\
+          060458 46 06 00 00     cmp        MDH,#0x0                                         = FFh\
+          06045c 3d 10           jmpr       cc_NE,LAB_06047e\
+          06045e f2 f5 0e fe     mov        r5,MDL                                           = FFh\
+          060462 1b ce           mulu       param_1,param_3\
+          060464 02 f5 0c fe     add        r5,MDH                                           = FFh\
+          060468 8d 0a           jmpr       cc_C,LAB_06047e\
+          06046a 6d 09           jmpr       cc_N,LAB_06047e\
+          06046c f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060470 9a 88 0f 60     jnb        MDC.0x6,LAB_060492                               = FFh\
+          060474 91 40           cpl        r4\
+          060476 91 50           cpl        r5\
+          060478 08 41           add        r4,#0x1\
+          06047a 18 50           addc       r5,#0x0\
+          06047c db 00           rets\
+                             LAB_06047e                                      XREF[3]:     06045c(j), 060468(j), 06046a(j)  \
+          06047e 8a 88 05 60     jb         MDC.0x6,LAB_06048c                               = FFh\
+          060482 e6 f5 ff 7f     mov        r5,#DAT_007ffe+1\
+          060486 e6 f4 ff ff     mov        r4,#0xffff\
+          06048a db 00           rets\
+                             LAB_06048c                                      XREF[1]:     06047e(j)  \
+          06048c e6 f5 00 80     mov        r5,#DAT_008000                                   = 5Ah\
+          060490 e0 04           mov        r4,#0x0\
+                             LAB_060492                                      XREF[1]:     060470(j)  \
+          060492 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060494(short param_1, short par\
+             undefined2        r4:2           <RETURN>\
+             short             r12:2          param_1\
+             short             r13:2          param_2\
+                             FUN_060494                                      XREF[9]:     FUN_012d3a:013112(c), \
+                                                                                          FUN_012d3a:01312c(c), 02408e(c), \
+                                                                                          FUN_023720:02413a(c), \
+                                                                                          FUN_023720:02424c(c), 02ce48(c), \
+                                                                                          02cf70(c), 02d030(c), \
+                                                                                          FUN_022d18:02d0ac(c)  \
+          060494 0b cd           mul        param_1,param_2\
+          060496 6d 04           jmpr       cc_N,LAB_0604a0\
+          060498 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06049c f1 89           movb       RL4,RH4\
+          06049e db 00           rets\
+                             LAB_0604a0                                      XREF[1]:     060496(j)  \
+          0604a0 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0604a4 49 80           cmpb       RL4,#0x0\
+          0604a6 2d 01           jmpr       cc_EQ,LAB_0604aa\
+          0604a8 09 91           addb       RH4,#0x1\
+                             LAB_0604aa                                      XREF[1]:     0604a6(j)  \
+          0604aa f1 89           movb       RL4,RH4\
+          0604ac db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0604ae(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0604ae                                      XREF[20]:    FUN_011b72:011bf0(c), \
+                                                                                          FUN_015084:01556e(c), \
+                                                                                          FUN_015084:01563e(c), \
+                                                                                          FUN_01cc0c:01cc5e(c), \
+                                                                                          FUN_01d7ec:01d832(c), \
+                                                                                          FUN_01d7ec:01d9e6(c), \
+                                                                                          FUN_02afd4:02b0e8(c), \
+                                                                                          FUN_02afd4:02b126(c), \
+                                                                                          FUN_02b3ea:02b44a(c), \
+                                                                                          FUN_02b690:02b9d4(c), \
+                                                                                          FUN_02bac0:02bb2e(c), \
+                                                                                          FUN_02bac0:02bb88(c), \
+                                                                                          FUN_034baa:0303d2(c), \
+                                                                                          FUN_030e9c:030f2c(c), \
+                                                                                          FUN_0317de:031844(c), \
+                                                                                          FUN_0317de:031862(c), \
+                                                                                          FUN_0317de:031884(c), \
+                                                                                          FUN_0317de:0318a2(c), \
+                                                                                          FUN_0323f8:032476(c), \
+                                                                                          FUN_0323f8:0324a4(c), [more]\
+          0604ae 9a fc 06 f0     jnb        param_1.0xf,LAB_0604be\
+          0604b2 81 c0           neg        param_1\
+          0604b4 1b cd           mulu       param_1,param_2\
+          0604b6 f2 f4 0c fe     mov        r4,MDH                                           = FFh\
+          0604ba 81 40           neg        r4\
+          0604bc db 00           rets\
+                             LAB_0604be                                      XREF[1]:     0604ae(j)  \
+          0604be 1b dc           mulu       param_2,param_1\
+          0604c0 f2 f4 0c fe     mov        r4,MDH                                           = FFh\
+          0604c4 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0604c6(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0604c6                                      XREF[1]:     FUN_0711bc:07147c(c)  \
+          0604c6 e6 f5 00 20     mov        r5,#0x2000\
+          0604ca 9a fc 0d f0     jnb        param_1.0xf,LAB_0604e8\
+          0604ce 81 c0           neg        param_1\
+          0604d0 1b cd           mulu       param_1,param_2\
+          0604d2 7b 55           divlu      r5\
+          0604d4 4d 06           jmpr       cc_V,LAB_0604e2\
+          0604d6 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0604da 8a f4 02 f0     jb         r4.0xf,LAB_0604e2\
+          0604de 81 40           neg        r4\
+          0604e0 db 00           rets\
+                             LAB_0604e2                                      XREF[2]:     0604d4(j), 0604da(j)  \
+          0604e2 e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          0604e6 db 00           rets\
+                             LAB_0604e8                                      XREF[1]:     0604ca(j)  \
+          0604e8 1b cd           mulu       param_1,param_2\
+          0604ea 7b 55           divlu      r5\
+          0604ec 4d 05           jmpr       cc_V,LAB_0604f8\
+          0604ee f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0604f2 8a f4 01 f0     jb         r4.0xf,LAB_0604f8\
+          0604f6 db 00           rets\
+                             LAB_0604f8                                      XREF[2]:     0604ec(j), 0604f2(j)  \
+          0604f8 e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          0604fc db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0604fe(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0604fe                                      XREF[4]:     FUN_011b72:011de2(c), \
+                                                                                          FUN_01d7ec:01daca(c), \
+                                                                                          FUN_01f33a:01f3e6(c), 039ea8(c)  \
+          0604fe 8a fc 0c f0     jb         param_1.0xf,LAB_06051a\
+          060502 1b cd           mulu       param_1,param_2\
+          060504 46 06 00 00     cmp        MDH,#0x0                                         = FFh\
+          060508 3d 05           jmpr       cc_NE,LAB_060514\
+          06050a f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06050e 8a f4 01 f0     jb         r4.0xf,LAB_060514\
+          060512 db 00           rets\
+                             LAB_060514                                      XREF[2]:     060508(j), 06050e(j)  \
+          060514 e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          060518 db 00           rets\
+                             LAB_06051a                                      XREF[1]:     0604fe(j)  \
+          06051a 81 c0           neg        param_1\
+          06051c 1b cd           mulu       param_1,param_2\
+          06051e 46 06 00 00     cmp        MDH,#0x0                                         = FFh\
+          060522 3d 06           jmpr       cc_NE,LAB_060530\
+          060524 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060528 8a f4 02 f0     jb         r4.0xf,LAB_060530\
+          06052c 81 40           neg        r4\
+          06052e db 00           rets\
+                             LAB_060530                                      XREF[2]:     060522(j), 060528(j)  \
+          060530 e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          060534 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060536(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060536                                      XREF[17]:    FUN_02ed48:02f092(c), \
+                                                                                          FUN_0388a8:0389c4(c), \
+                                                                                          FUN_0388a8:0389e0(c), \
+                                                                                          FUN_03a340:03a390(c), \
+                                                                                          FUN_03a340:03a3a2(c), \
+                                                                                          FUN_03a340:03a3da(c), \
+                                                                                          FUN_03a340:03a3ec(c), \
+                                                                                          FUN_03a480:03a48e(c), \
+                                                                                          FUN_03a480:03a510(c), \
+                                                                                          FUN_03a612:03a620(c), \
+                                                                                          FUN_03a612:03a68e(c), \
+                                                                                          FUN_03a74a:03a756(c), \
+                                                                                          FUN_03a74a:03a77e(c), \
+                                                                                          FUN_03a74a:03a7a6(c), \
+                                                                                          FUN_03a74a:03a7ce(c), \
+                                                                                          FUN_0717f0:07209c(c), \
+                                                                                          FUN_0717f0:0720ec(c)  \
+          060536 e6 f5 00 04     mov        r5,#0x400\
+          06053a 1b cd           mulu       param_1,param_2\
+          06053c 7b 55           divlu      r5\
+          06053e 4d 03           jmpr       cc_V,LAB_060546\
+          060540 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060544 db 00           rets\
+                             LAB_060546                                      XREF[1]:     06053e(j)  \
+          060546 e6 f4 ff ff     mov        r4,#0xffff\
+          06054a db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_06054c(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_06054c                                      XREF[3]:     07046c(c), 0704d2(c), 070516(c)  \
+          06054c e6 f5 00 40     mov        r5,#DAT_004000                                   = 21h\
+          060550 1b cd           mulu       param_1,param_2\
+          060552 7b 55           divlu      r5\
+          060554 4d 03           jmpr       cc_V,LAB_06055c\
+          060556 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06055a db 00           rets\
+                             LAB_06055c                                      XREF[1]:     060554(j)  \
+          06055c e6 f4 ff ff     mov        r4,#0xffff\
+          060560 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060562(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060562                                      XREF[16]:    FUN_015b2a:015dfc(c), \
+                                                                                          FUN_015b2a:015e10(c), \
+                                                                                          FUN_015b2a:015e24(c), \
+                                                                                          FUN_015b2a:015e38(c), \
+                                                                                          FUN_015b2a:015eaa(c), \
+                                                                                          FUN_015b2a:015ebe(c), \
+                                                                                          FUN_015b2a:015ed2(c), \
+                                                                                          FUN_015b2a:015ee6(c), \
+                                                                                          FUN_015f28:0161f2(c), \
+                                                                                          FUN_015f28:016202(c), \
+                                                                                          FUN_015f28:016260(c), \
+                                                                                          FUN_015f28:016270(c), \
+                                                                                          FUN_01d6de:01d6e6(c), \
+                                                                                          FUN_01d7ec:01d978(c), \
+                                                                                          FUN_01d7ec:01d99c(c), \
+                                                                                          FUN_038cde:038fe2(c)  \
+          060562 e6 f5 00 01     mov        r5,#0x100\
+          060566 1b cd           mulu       param_1,param_2\
+          060568 7b 55           divlu      r5\
+          06056a 4d 03           jmpr       cc_V,LAB_060572\
+          06056c f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060570 db 00           rets\
+                             LAB_060572                                      XREF[1]:     06056a(j)  \
+          060572 e6 f4 ff ff     mov        r4,#0xffff\
+          060576 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060578(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060578                                      XREF[20]:    FUN_011b72:011c04(c), \
+                                                                                          FUN_011b72:011d3c(c), 013d90(c), \
+                                                                                          013dbe(c), FUN_070042:0700f2(c), \
+                                                                                          FUN_0717f0:071a7c(c), \
+                                                                                          FUN_0717f0:071a94(c), \
+                                                                                          FUN_0717f0:071ab4(c), \
+                                                                                          FUN_0717f0:071ad4(c), \
+                                                                                          FUN_0717f0:071b06(c), \
+                                                                                          FUN_0717f0:071e7a(c), \
+                                                                                          FUN_0717f0:071f52(c), \
+                                                                                          FUN_0717f0:071f8e(c), \
+                                                                                          FUN_0717f0:071fb4(c), \
+                                                                                          FUN_0717f0:071fbe(c), \
+                                                                                          FUN_0717f0:072092(c), \
+                                                                                          FUN_0717f0:0720e2(c), \
+                                                                                          FUN_0717f0:0721ae(c), \
+                                                                                          FUN_0717f0:0721b8(c), \
+                                                                                          FUN_0717f0:0721e4(c), [more]\
+          060578 1b cd           mulu       param_1,param_2\
+          06057a f2 f4 0c fe     mov        r4,MDH                                           = FFh\
+          06057e db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_060580(short param_1, short param_2,\
+             short             r4:2           <RETURN>\
+             short             r12:2          param_1\
+             short             r13:2          param_2\
+             short             r14:2          param_3\
+                             FUN_060580                                      XREF[13]:    026ce2(c), 027026(c), 02cc8c(c), \
+                                                                                          02ccb0(c), 02cd8e(c), 02cdb2(c), \
+                                                                                          02cdee(c), 02ce12(c), 02cefa(c), \
+                                                                                          02cf3a(c), 070818(c), 070854(c), \
+                                                                                          FUN_0717f0:0719a4(c)  \
+          060580 20 cd           sub        param_1,param_2\
+          060582 2a fe fc ff     bcmp       param_1.0xf,param_3.0xf\
+          060586 6d 0b           jmpr       cc_N,LAB_06059e\
+          060588 0b ce           mul        param_1,param_3\
+          06058a f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06058e 7c 54           shr        r4,#0x5\
+          060590 00 4d           add        r4,param_2\
+          060592 71 99           orb        RH4,RH4\
+          060594 3d 01           jmpr       cc_NE,LAB_060598\
+          060596 db 00           rets\
+                             LAB_060598                                      XREF[1]:     060594(j)  \
+          060598 e7 f8 ff 00     movb       RL4,#0xff\
+          06059c db 00           rets\
+                             LAB_06059e                                      XREF[1]:     060586(j)  \
+          06059e 81 e0           neg        param_3\
+          0605a0 0b ce           mul        param_1,param_3\
+          0605a2 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0605a6 7c 54           shr        r4,#0x5\
+          0605a8 20 d4           sub        param_2,r4\
+          0605aa 6d 02           jmpr       cc_N,LAB_0605b0\
+          0605ac f0 4d           mov        r4,param_2\
+          0605ae db 00           rets\
+                             LAB_0605b0                                      XREF[1]:     0605aa(j)  \
+          0605b0 e1 08           movb       RL4,#0x0\
+          0605b2 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0605b4(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0605b4                                      XREF[4]:     FUN_015f28:016048(c), 0307c6(c), \
+                                                                                          FUN_0342ba:034374(c), \
+                                                                                          FUN_0711bc:071592(c)  \
+          0605b4 e6 f5 00 80     mov        r5,#DAT_008000                                   = 5Ah\
+          0605b8 9a fc 0d f0     jnb        param_1.0xf,LAB_0605d6\
+          0605bc 81 c0           neg        param_1\
+          0605be 1b cd           mulu       param_1,param_2\
+          0605c0 7b 55           divlu      r5\
+          0605c2 4d 06           jmpr       cc_V,LAB_0605d0\
+          0605c4 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0605c8 8a f4 02 f0     jb         r4.0xf,LAB_0605d0\
+          0605cc 81 40           neg        r4\
+          0605ce db 00           rets\
+                             LAB_0605d0                                      XREF[2]:     0605c2(j), 0605c8(j)  \
+          0605d0 e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          0605d4 db 00           rets\
+                             LAB_0605d6                                      XREF[1]:     0605b8(j)  \
+          0605d6 1b cd           mulu       param_1,param_2\
+          0605d8 7b 55           divlu      r5\
+          0605da 4d 05           jmpr       cc_V,LAB_0605e6\
+          0605dc f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0605e0 8a f4 01 f0     jb         r4.0xf,LAB_0605e6\
+          0605e4 db 00           rets\
+                             LAB_0605e6                                      XREF[2]:     0605da(j), 0605e0(j)  \
+          0605e6 e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          0605ea db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_0605ec(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0605ec                                      XREF[13]:    FUN_011f1c:012306(c), \
+                                                                                          FUN_011f1c:012358(c), 034e5c(c), \
+                                                                                          034ef8(c), 035080(c), 035142(c), \
+                                                                                          FUN_034baa:035a04(c), \
+                                                                                          FUN_034baa:035a8c(c), \
+                                                                                          FUN_034baa:035bde(c), \
+                                                                                          caseD_0:03808e(c), \
+                                                                                          caseD_0:0380a6(c), \
+                                                                                          FUN_07308c:073096(c), \
+                                                                                          FUN_0730f4:073108(c)  \
+          0605ec 1b cd           mulu       param_1,param_2\
+          0605ee f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0605f2 f1 89           movb       RL4,RH4\
+          0605f4 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               ushort __stdcall FUN_0605f6(ushort param_1, ushort param\
+             ushort            r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0605f6                                      XREF[20]:    FUN_011f1c:0123e4(c), \
+                                                                                          FUN_011f1c:01246e(c), \
+                                                                                          FUN_015b2a:015d58(c), \
+                                                                                          FUN_015b2a:015d68(c), \
+                                                                                          FUN_015f28:015fa4(c), \
+                                                                                          FUN_015f28:015fd6(c), \
+                                                                                          FUN_015f28:01600a(c), \
+                                                                                          FUN_015f28:016096(c), \
+                                                                                          FUN_015f28:0160c4(c), \
+                                                                                          FUN_015f28:016152(c), \
+                                                                                          FUN_015f28:016162(c), \
+                                                                                          FUN_026596:0265e6(c), \
+                                                                                          FUN_026596:02671a(c), \
+                                                                                          FUN_02b62c:02b686(c), \
+                                                                                          FUN_02ed48:02f104(c), \
+                                                                                          FUN_036b46:036bdc(c), \
+                                                                                          FUN_036c34:036c4e(c), \
+                                                                                          FUN_070042:0700fc(c), \
+                                                                                          FUN_070042:070108(c), \
+                                                                                          FUN_0717f0:071952(c), [more]\
+          0605f6 1b cd           mulu       param_1,param_2\
+          0605f8 f2 f4 0c fe     mov        r4,MDH                                           = FFh\
+          0605fc 6d 06           jmpr       cc_N,LAB_06060a\
+          0605fe 5c 14           shl        r4,#0x1\
+          060600 f2 fc 0e fe     mov        param_1,MDL                                      = FFh\
+          060604 4a fc f4 f0     bmov       r4.0x0,param_1.0xf\
+          060608 db 00           rets\
+                             LAB_06060a                                      XREF[1]:     0605fc(j)  \
+          06060a e6 f4 ff ff     mov        r4,#0xffff\
+          06060e db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060610(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060610                                      XREF[1]:     FUN_02ed48:02f0a2(c)  \
+          060610 e6 f5 00 20     mov        r5,#0x2000\
+          060614 1b cd           mulu       param_1,param_2\
+          060616 7b 55           divlu      r5\
+          060618 4d 03           jmpr       cc_V,LAB_060620\
+          06061a f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06061e db 00           rets\
+                             LAB_060620                                      XREF[1]:     060618(j)  \
+          060620 e6 f4 ff ff     mov        r4,#0xffff\
+          060624 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060626(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060626                                      XREF[7]:     FUN_01d7ec:01d922(c), \
+                                                                                          FUN_01d7ec:01d954(c), \
+                                                                                          FUN_01d7ec:01de28(c), \
+                                                                                          FUN_01d7ec:01de60(c), \
+                                                                                          FUN_01d7ec:01deb2(c), \
+                                                                                          FUN_01d7ec:01dec2(c), \
+                                                                                          FUN_01f33a:01f3ae(c)  \
+          060626 1b cd           mulu       param_1,param_2\
+          060628 46 06 80 00     cmp        MDH,#0x80                                        = FFh\
+          06062c 9d 07           jmpr       cc_NC,LAB_06063c\
+          06062e f2 f5 0c fe     mov        r5,MDH                                           = FFh\
+          060632 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060636 f1 89           movb       RL4,RH4\
+          060638 f1 9a           movb       RH4,RL5\
+          06063a db 00           rets\
+                             LAB_06063c                                      XREF[1]:     06062c(j)  \
+          06063c e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          060640 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060642(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060642                                      XREF[7]:     FUN_017338:017370(c), \
+                                                                                          FUN_017338:0174ae(c), \
+                                                                                          FUN_0175fc:0176aa(c), \
+                                                                                          FUN_0175fc:0176ce(c), \
+                                                                                          FUN_02a41c:02aac6(c), 070664(c), \
+                                                                                          0706ae(c)  \
+          060642 e6 f5 00 10     mov        r5,#0x1000\
+          060646 1b cd           mulu       param_1,param_2\
+          060648 7b 55           divlu      r5\
+          06064a 4d 03           jmpr       cc_V,LAB_060652\
+          06064c f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060650 db 00           rets\
+                             LAB_060652                                      XREF[1]:     06064a(j)  \
+          060652 e6 f4 ff ff     mov        r4,#0xffff\
+          060656 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined2 __stdcall FUN_060658(ushort param_1, ushort p\
+             undefined2        r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060658                                      XREF[12]:    FUN_015084:0155dc(c), \
+                                                                                          FUN_015084:0156a8(c), \
+                                                                                          FUN_02ec42:02ed1e(c), \
+                                                                                          FUN_02ec42:02ed3c(c), 039512(c), \
+                                                                                          03956a(c), 0395a8(c), 0395e0(c), \
+                                                                                          FUN_070042:0700b8(c), 07024e(c), \
+                                                                                          0708bc(c), 0708d4(c)  \
+          060658 1b cd           mulu       param_1,param_2\
+          06065a f2 f5 0c fe     mov        r5,MDH                                           = FFh\
+          06065e 49 b0           cmpb       RH5,#0x0\
+          060660 3d 05           jmpr       cc_NE,LAB_06066c\
+          060662 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060666 f1 89           movb       RL4,RH4\
+          060668 f1 9a           movb       RH4,RL5\
+          06066a db 00           rets\
+                             LAB_06066c                                      XREF[1]:     060660(j)  \
+          06066c e6 f4 ff ff     mov        r4,#0xffff\
+          060670 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_060672(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_060672                                      XREF[2]:     FUN_02dfaa:02e282(c), 039ebc(c)  \
+          060672 e6 f5 00 40     mov        r5,#DAT_004000                                   = 21h\
+          060676 9a fc 0d f0     jnb        param_1.0xf,LAB_060694\
+          06067a 81 c0           neg        param_1\
+          06067c 1b cd           mulu       param_1,param_2\
+          06067e 7b 55           divlu      r5\
+          060680 4d 06           jmpr       cc_V,LAB_06068e\
+          060682 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          060686 8a f4 02 f0     jb         r4.0xf,LAB_06068e\
+          06068a 81 40           neg        r4\
+          06068c db 00           rets\
+                             LAB_06068e                                      XREF[2]:     060680(j), 060686(j)  \
+          06068e e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          060692 db 00           rets\
+                             LAB_060694                                      XREF[1]:     060676(j)  \
+          060694 1b cd           mulu       param_1,param_2\
+          060696 7b 55           divlu      r5\
+          060698 4d 05           jmpr       cc_V,LAB_0606a4\
+          06069a f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          06069e 8a f4 01 f0     jb         r4.0xf,LAB_0606a4\
+          0606a2 db 00           rets\
+                             LAB_0606a4                                      XREF[2]:     060698(j), 06069e(j)  \
+          0606a4 e6 f4 ff 7f     mov        r4,#DAT_007ffe+1\
+          0606a8 db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               short __stdcall FUN_0606aa(ushort param_1, ushort param_2)\
+             short             r4:2           <RETURN>\
+             ushort            r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_0606aa                                      XREF[1]:     03857e(c)  \
+          0606aa e6 f5 00 10     mov        r5,#0x1000\
+          0606ae 9a fc 0d f0     jnb        param_1.0xf,LAB_0606cc\
+          0606b2 81 c0           neg        param_1\
+          0606b4 1b cd           mulu       param_1,param_2\
+          0606b6 7b 55           divlu      r5\
+          0606b8 4d 06           jmpr       cc_V,LAB_0606c6\
+          0606ba f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0606be 8a f4 02 f0     jb         r4.0xf,LAB_0606c6\
+          0606c2 81 40           neg        r4\
+          0606c4 db 00           rets\
+                             LAB_0606c6                                      XREF[2]:     0606b8(j), 0606be(j)  \
+          0606c6 e6 f4 00 80     mov        r4,#DAT_008000                                   = 5Ah\
+          0606ca db 00           rets\
+                             LAB_0606cc                                      XREF[1]:     0606ae(j)  \
+          0606cc 1b cd           mulu       param_1,param_2\
+          0606ce 7b 55           divlu      r5\
+          0606d0 4d 05           jmpr       cc_V,LAB_0606dc\
+          0606d2 f2 f4 0e fe     mov        r4,MDL                                           = FFh\
+          0606d6 8a f4 01 f0     jb         r4.0xf,LAB_0606dc\
+          0606da db 00           rets\
+                             LAB_0606dc                                      XREF[2]:     0606d0(j), 0606d6(j)  \

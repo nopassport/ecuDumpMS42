@@ -1,0 +1,640 @@
+          038cc0 c2 f4 40 cb     movbz      r4,DAT_00cb40                                    = FFh\
+          038cc4 66 f4 20 00     and        r4,#0x20\
+          038cc8 2d 04           jmpr       cc_EQ,LAB_038cd2\
+          038cca e6 f4 ff f7     mov        r4,#DAT_00f7ff                                   = FFh\
+          038cce 64 f4 ee cf     and        DAT_00cfee,r4                                    = FFFFh\
+                             LAB_038cd2                                      XREF[1]:     038cc8(j)  \
+          038cd2 d1 80           extr       #0x1\
+          038cd4 0a b6 ff 00     bfldl      CC22IC,#0x0,#0xff                                = FFFFh\
+          038cd8 1a 92 02 0f     bfldh      CCM5,#0xf,#0x2=>DAT_00f2ff                       = FFFFh\
+                                                                                             = FFh\
+          038cdc db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined __stdcall FUN_038cde(void)\
+             undefined         <UNASSIGNED>   <RETURN>\
+                             FUN_038cde                                      XREF[1]:     038618(c)  \
+          038cde 88 90           mov        [-r0],r9\
+          038ce0 88 80           mov        [-r0],r8\
+          038ce2 88 70           mov        [-r0],r7\
+          038ce4 e6 fc b1 0b     mov        r12,#0xbb1\
+          038ce8 c2 fd 2e c4     movbz      r13,DAT_00c42e                                   = FFh\
+          038cec da 06 ca 08     calls      FUN_0608ca                                       undefined FUN_0608ca(byte * para\
+          038cf0 9a 3c 0b 90     jnb        DAT_00fd78.0x9,LAB_038d0a                        = FFFFh\
+          038cf4 9a 1e 09 00     jnb        DAT_00fd3c.0x0,LAB_038d0a                        = FFFFh\
+          038cf8 f2 f4 5c fa     mov        r4,DAT_00fa5c                                    = FFFFh\
+          038cfc 42 f4 54 04     cmp        r4,DAT_000454                                    = FFFFh\
+          038d00 9d 04           jmpr       cc_NC,LAB_038d0a\
+          038d02 c2 f7 e5 c1     movbz      r7,DAT_00c1e5                                    = FFh\
+          038d06 5c 87           shl        r7,#0x8\
+          038d08 0d 16           jmpr       cc_UC,LAB_038d36\
+                             LAB_038d0a                                      XREF[3]:     038cf0(j), 038cf4(j), 038d00(j)  \
+          038d0a e6 fc ca 12     mov        r12,#0x12ca\
+          038d0e f2 fd ae fa     mov        r13,DAT_00faae                                   = FFFFh\
+          038d12 da 06 16 09     calls      FUN_060916                                       undefined FUN_060916(short * par\
+          038d16 e6 fc 58 2e     mov        r12,#0x2e58\
+          038d1a da 06 a4 0a     calls      FUN_060aa4                                       ushort FUN_060aa4(short param_1)\
+          038d1e 88 40           mov        [-r0],r4\
+          038d20 e6 fc 38 2d     mov        r12,#0x2d38\
+          038d24 da 06 a4 0a     calls      FUN_060aa4                                       ushort FUN_060aa4(short param_1)\
+          038d28 f0 c4           mov        r12,r4\
+          038d2a d2 fe e9 c2     movbs      r14,DAT_00c2e9                                   = FFh\
+          038d2e 98 d0           mov        r13,[r0+]\
+          038d30 da 06 1a 07     calls      FUN_06071a                                       short FUN_06071a(ushort param_1,\
+          038d34 f0 74           mov        r7,r4\
+                             LAB_038d36                                      XREF[1]:     038d08(j)  \
+          038d36 f6 f7 d8 e0     mov        DAT_00e0d8,r7                                    = FFFFh\
+          038d3a 9a 2f 10 80     jnb        DAT_00fd5e.0x8,LAB_038d5e                        = FFFFh\
+          038d3e f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          038d42 f2 fd c8 06     mov        r13,LAB_0006c6+2\
+          038d46 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038d4a f0 74           mov        r7,r4\
+          038d4c 9a 2f 03 90     jnb        DAT_00fd5e.0x9,LAB_038d56                        = FFFFh\
+          038d50 42 f7 b2 fa     cmp        r7,DAT_00fab2                                    = FFFFh\
+          038d54 8d 05           jmpr       cc_C,LAB_038d60\
+                             LAB_038d56                                      XREF[1]:     038d4c(j)  \
+          038d56 f2 f7 b2 fa     mov        r7,DAT_00fab2                                    = FFFFh\
+          038d5a 9e 2f           bclr       DAT_00fd5e.offset DAT_00fdfe+1                   = FFFFh\
+          038d5c 0d 01           jmpr       cc_UC,LAB_038d60\
+                             LAB_038d5e                                      XREF[1]:     038d3a(j)  \
+          038d5e 9f 2f           bset       DAT_00fd5e.0x9                                   = FFFFh\
+                             LAB_038d60                                      XREF[2]:     038d54(j), 038d5c(j)  \
+          038d60 e6 fc a8 14     mov        r12,#0x14a8\
+          038d64 f2 fd ae fa     mov        r13,DAT_00faae                                   = FFFFh\
+          038d68 da 06 16 09     calls      FUN_060916                                       undefined FUN_060916(short * par\
+          038d6c e6 fc ba 3b     mov        r12,#DAT_003bba\
+          038d70 da 06 a4 0a     calls      FUN_060aa4                                       ushort FUN_060aa4(short param_1)\
+          038d74 88 40           mov        [-r0],r4\
+          038d76 e6 fc ca 3a     mov        r12,#DAT_003aca                                  = FFh\
+          038d7a da 06 a4 0a     calls      FUN_060aa4                                       ushort FUN_060aa4(short param_1)\
+          038d7e f0 c4           mov        r12,r4\
+          038d80 d2 fe e9 c2     movbs      r14,DAT_00c2e9                                   = FFh\
+          038d84 98 d0           mov        r13,[r0+]\
+          038d86 da 06 1a 07     calls      FUN_06071a                                       short FUN_06071a(ushort param_1,\
+          038d8a f6 f4 10 e1     mov        DAT_00e110,r4                                    = FFFFh\
+          038d8e f0 c4           mov        r12,r4\
+          038d90 f3 f8 cf e5     movb       RL4,DAT_00e5cf                                   = FFh\
+          038d94 d0 8d           movbs      r13,RL4\
+          038d96 5c 8d           shl        r13,#0x8\
+          038d98 da 06 74 01     calls      FUN_060174                                       short FUN_060174(short param_1, \
+          038d9c f6 f4 10 e1     mov        DAT_00e110,r4                                    = FFFFh\
+          038da0 9a 48 06 a0     jnb        DAT_00fd90.0xa,LAB_038db0                        = FFFFh\
+          038da4 42 f7 d6 e0     cmp        r7,DAT_00e0d6                                    = FFFFh\
+          038da8 fd 14           jmpr       cc_ULE,LAB_038dd2\
+          038daa f2 f7 d6 e0     mov        r7,DAT_00e0d6                                    = FFFFh\
+          038dae 0d 11           jmpr       cc_UC,LAB_038dd2\
+                             LAB_038db0                                      XREF[1]:     038da0(j)  \
+          038db0 9a 2e 0f 50     jnb        DAT_00fd5c.0x5,LAB_038dd2                        = FFFFh\
+          038db4 f2 fc d6 e0     mov        r12,DAT_00e0d6                                   = FFFFh\
+          038db8 f2 fd c8 06     mov        r13,LAB_0006c6+2\
+          038dbc da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038dc0 f6 f4 d6 e0     mov        DAT_00e0d6,r4                                    = FFFFh\
+          038dc4 42 f7 d6 e0     cmp        r7,DAT_00e0d6                                    = FFFFh\
+          038dc8 9d 02           jmpr       cc_NC,LAB_038dce\
+          038dca 5e 2e           bclr       DAT_00fd5c.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          038dcc 0d 02           jmpr       cc_UC,LAB_038dd2\
+                             LAB_038dce                                      XREF[1]:     038dc8(j)  \
+          038dce f2 f7 d6 e0     mov        r7,DAT_00e0d6                                    = FFFFh\
+                             LAB_038dd2                                      XREF[4]:     038da8(j), 038dae(j), 038db0(j), \
+                                                                                          038dcc(j)  \
+          038dd2 f2 fc b2 fa     mov        r12,DAT_00fab2                                   = FFFFh\
+          038dd6 f2 fd ec e0     mov        r13,DAT_00e0ec                                   = FFFFh\
+          038dda da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038dde f6 f4 da e0     mov        DAT_00e0da,r4                                    = FFFFh\
+          038de2 9a 2f 09 c0     jnb        DAT_00fd5e.0xc,LAB_038df8                        = FFFFh\
+          038de6 f2 fc b6 fa     mov        r12,DAT_00fab6                                   = FFFFh\
+          038dea f2 fd d8 e0     mov        r13,DAT_00e0d8                                   = FFFFh\
+          038dee da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038df2 f6 f4 ba fa     mov        DAT_00faba,r4                                    = FFFFh\
+          038df6 0d 08           jmpr       cc_UC,LAB_038e08\
+                             LAB_038df8                                      XREF[1]:     038de2(j)  \
+          038df8 f2 fc da e0     mov        r12,DAT_00e0da                                   = FFFFh\
+          038dfc f2 fd d8 e0     mov        r13,DAT_00e0d8                                   = FFFFh\
+          038e00 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038e04 f6 f4 ba fa     mov        DAT_00faba,r4                                    = FFFFh\
+                             LAB_038e08                                      XREF[1]:     038df6(j)  \
+          038e08 f2 f4 b6 fa     mov        r4,DAT_00fab6                                    = FFFFh\
+          038e0c 42 f4 aa e0     cmp        r4,DAT_00e0aa                                    = FFFFh\
+          038e10 fd 0d           jmpr       cc_ULE,LAB_038e2c\
+          038e12 f0 c4           mov        r12,r4\
+          038e14 f2 fd aa e0     mov        r13,DAT_00e0aa                                   = FFFFh\
+          038e18 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038e1c f0 c4           mov        r12,r4\
+          038e1e f2 fd ec e0     mov        r13,DAT_00e0ec                                   = FFFFh\
+          038e22 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038e26 f6 f4 ea e0     mov        DAT_00e0ea,r4                                    = FFFFh\
+          038e2a 0d 0d           jmpr       cc_UC,LAB_038e46\
+                             LAB_038e2c                                      XREF[1]:     038e10(j)  \
+          038e2c f2 fc aa e0     mov        r12,DAT_00e0aa                                   = FFFFh\
+          038e30 f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038e34 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038e38 f0 d4           mov        r13,r4\
+          038e3a f2 fc ec e0     mov        r12,DAT_00e0ec                                   = FFFFh\
+          038e3e da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038e42 f6 f4 ea e0     mov        DAT_00e0ea,r4                                    = FFFFh\
+                             LAB_038e46                                      XREF[1]:     038e2a(j)  \
+          038e46 42 f7 b8 fa     cmp        r7,DAT_00fab8                                    = FFFFh\
+          038e4a fd 02           jmpr       cc_ULE,LAB_038e50\
+          038e4c 5e 12           bclr       DAT_00fd24.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          038e4e 0d 01           jmpr       cc_UC,LAB_038e52\
+                             LAB_038e50                                      XREF[1]:     038e4a(j)  \
+          038e50 5f 12           bset       DAT_00fd24.0x5                                   = FFFFh\
+                             LAB_038e52                                      XREF[1]:     038e4e(j)  \
+          038e52 9a 2d 4a 90     jnb        DAT_00fd5a.0x9,LAB_038eea                        = FFFFh\
+          038e56 e6 fc e4 12     mov        r12,#0x12e4\
+          038e5a f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038e5e da 06 16 09     calls      FUN_060916                                       undefined FUN_060916(short * par\
+          038e62 9a 12 21 50     jnb        DAT_00fd24.0x5,LAB_038ea8                        = FFFFh\
+          038e66 f2 fc b6 fa     mov        r12,DAT_00fab6                                   = FFFFh\
+          038e6a f2 fd d8 e0     mov        r13,DAT_00e0d8                                   = FFFFh\
+          038e6e 02 fd ba fa     add        r13,DAT_00faba                                   = FFFFh\
+          038e72 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038e76 f0 d4           mov        r13,r4\
+          038e78 e6 fc bc 12     mov        r12,#0x12bc\
+          038e7c da 06 5a 09     calls      FUN_06095a                                       undefined FUN_06095a(short * par\
+          038e80 e6 fc 93 95     mov        r12,#DAT_009593                                  = D0h\
+          038e84 da 06 0c 0a     calls      FUN_060a0c                                       ushort FUN_060a0c(short param_1)\
+          038e88 c0 84           movbz      r4,RL4\
+          038e8a 5c 84           shl        r4,#0x8\
+          038e8c 88 40           mov        [-r0],r4\
+          038e8e f0 c7           mov        r12,r7\
+          038e90 f2 fd ba fa     mov        r13,DAT_00faba                                   = FFFFh\
+          038e94 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038e98 f0 d4           mov        r13,r4\
+          038e9a f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          038e9e 98 e0           mov        r14,[r0+]\
+          038ea0 da 06 5c 07     calls      FUN_06075c                                       short FUN_06075c(ushort param_1,\
+          038ea4 f0 74           mov        r7,r4\
+          038ea6 0d 3a           jmpr       cc_UC,LAB_038f1c\
+                             LAB_038ea8                                      XREF[1]:     038e62(j)  \
+          038ea8 f2 fc d8 e0     mov        r12,DAT_00e0d8                                   = FFFFh\
+          038eac 02 fc ba fa     add        r12,DAT_00faba                                   = FFFFh\
+          038eb0 f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038eb4 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038eb8 f0 d4           mov        r13,r4\
+          038eba e6 fc bc 12     mov        r12,#0x12bc\
+          038ebe da 06 5a 09     calls      FUN_06095a                                       undefined FUN_06095a(short * par\
+          038ec2 e6 fc 87 95     mov        r12,#DAT_009587                                  = 24h    $\
+          038ec6 da 06 0c 0a     calls      FUN_060a0c                                       ushort FUN_060a0c(short param_1)\
+          038eca c0 84           movbz      r4,RL4\
+          038ecc 5c 84           shl        r4,#0x8\
+          038ece 88 40           mov        [-r0],r4\
+          038ed0 f0 c7           mov        r12,r7\
+          038ed2 f2 fd ba fa     mov        r13,DAT_00faba                                   = FFFFh\
+          038ed6 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038eda f0 d4           mov        r13,r4\
+          038edc f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          038ee0 98 e0           mov        r14,[r0+]\
+          038ee2 da 06 5c 07     calls      FUN_06075c                                       short FUN_06075c(ushort param_1,\
+          038ee6 f0 74           mov        r7,r4\
+          038ee8 0d 19           jmpr       cc_UC,LAB_038f1c\
+                             LAB_038eea                                      XREF[1]:     038e52(j)  \
+          038eea 8a 12 17 50     jb         DAT_00fd24.0x5,LAB_038f1c                        = FFFFh\
+          038eee f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          038ef2 49 85           cmpb       RL4,#0x5\
+          038ef4 2d 02           jmpr       cc_EQ,LAB_038efa\
+          038ef6 49 83           cmpb       RL4,#0x3\
+          038ef8 3d 11           jmpr       cc_NE,LAB_038f1c\
+                             LAB_038efa                                      XREF[1]:     038ef4(j)  \
+          038efa e6 fc 9a 12     mov        r12,#FUN_00129a\
+          038efe f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038f02 da 06 16 09     calls      FUN_060916                                       undefined FUN_060916(short * par\
+          038f06 e6 fc 2c 2d     mov        r12,#0x2d2c\
+          038f0a da 06 d8 09     calls      FUN_0609d8                                       ushort FUN_0609d8(short param_1)\
+          038f0e f0 e4           mov        r14,r4\
+          038f10 f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          038f14 f0 d7           mov        r13,r7\
+          038f16 da 06 5c 07     calls      FUN_06075c                                       short FUN_06075c(ushort param_1,\
+          038f1a f0 74           mov        r7,r4\
+                             LAB_038f1c                                      XREF[4]:     038ea6(j), 038ee8(j), 038eea(j), \
+                                                                                          038ef8(j)  \
+          038f1c 42 f7 da e0     cmp        r7,DAT_00e0da                                    = FFFFh\
+          038f20 9d 05           jmpr       cc_NC,LAB_038f2c\
+          038f22 f2 f4 da e0     mov        r4,DAT_00e0da                                    = FFFFh\
+          038f26 f6 f4 b8 fa     mov        DAT_00fab8,r4                                    = FFFFh\
+          038f2a 0d 0a           jmpr       cc_UC,LAB_038f40\
+                             LAB_038f2c                                      XREF[1]:     038f20(j)  \
+          038f2c 42 f7 c2 06     cmp        r7,LAB_0006c2\
+          038f30 9d 03           jmpr       cc_NC,LAB_038f38\
+          038f32 f6 f7 b8 fa     mov        DAT_00fab8,r7                                    = FFFFh\
+          038f36 0d 04           jmpr       cc_UC,LAB_038f40\
+                             LAB_038f38                                      XREF[1]:     038f30(j)  \
+          038f38 f2 f4 c2 06     mov        r4,LAB_0006c2\
+          038f3c f6 f4 b8 fa     mov        DAT_00fab8,r4                                    = FFFFh\
+                             LAB_038f40                                      XREF[2]:     038f2a(j), 038f36(j)  \
+          038f40 8a 32 0c 70     jb         DAT_00fd64.0x7,LAB_038f5c                        = FFFFh\
+          038f44 f3 f8 68 ce     movb       RL4,DAT_00ce68                                   = FFh\
+          038f48 49 81           cmpb       RL4,#0x1\
+          038f4a 2d 08           jmpr       cc_EQ,LAB_038f5c\
+          038f4c f2 fc b2 fa     mov        r12,DAT_00fab2                                   = FFFFh\
+          038f50 f2 fd 92 04     mov        r13,DAT_000492                                   = FFh\
+          038f54 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038f58 f0 74           mov        r7,r4\
+          038f5a 0d 07           jmpr       cc_UC,LAB_038f6a\
+                             LAB_038f5c                                      XREF[2]:     038f40(j), 038f4a(j)  \
+          038f5c f2 fc b0 fa     mov        r12,DAT_00fab0                                   = FFFFh\
+          038f60 f2 fd 92 04     mov        r13,DAT_000492                                   = FFh\
+          038f64 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038f68 f0 74           mov        r7,r4\
+                             LAB_038f6a                                      XREF[1]:     038f5a(j)  \
+          038f6a 42 f7 b8 fa     cmp        r7,DAT_00fab8                                    = FFFFh\
+          038f6e 9d 04           jmpr       cc_NC,LAB_038f78\
+          038f70 8a 3c 02 90     jb         DAT_00fd78.0x9,LAB_038f78                        = FFFFh\
+          038f74 f6 f7 b8 fa     mov        DAT_00fab8,r7                                    = FFFFh\
+                             LAB_038f78                                      XREF[2]:     038f6e(j), 038f70(j)  \
+          038f78 f2 f4 ea e0     mov        r4,DAT_00e0ea                                    = FFFFh\
+          038f7c 42 f4 76 04     cmp        r4,DAT_000476                                    = FFFFh\
+          038f80 9d 21           jmpr       cc_NC,LAB_038fc4\
+          038f82 f2 f5 ba fa     mov        r5,DAT_00faba                                    = FFFFh\
+          038f86 48 50           cmp        r5,#0x0\
+          038f88 fd 1d           jmpr       cc_ULE,LAB_038fc4\
+          038f8a f2 fc aa e0     mov        r12,DAT_00e0aa                                   = FFFFh\
+          038f8e f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038f92 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          038f96 f0 c4           mov        r12,r4\
+          038f98 f2 fd 8e 04     mov        r13,DAT_00048e                                   = FFFFh\
+          038f9c da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          038fa0 f0 d4           mov        r13,r4\
+          038fa2 f2 fc ec e0     mov        r12,DAT_00e0ec                                   = FFFFh\
+          038fa6 f2 fe 8c 04     mov        r14,DAT_00048c                                   = FFFFh\
+          038faa da 06 5c 07     calls      FUN_06075c                                       short FUN_06075c(ushort param_1,\
+          038fae f6 f4 ec e0     mov        DAT_00e0ec,r4                                    = FFFFh\
+          038fb2 f2 f4 ec e0     mov        r4,DAT_00e0ec                                    = FFFFh\
+          038fb6 42 f4 90 04     cmp        r4,DAT_000490                                    = FFFFh\
+          038fba 9d 04           jmpr       cc_NC,LAB_038fc4\
+          038fbc f2 f4 90 04     mov        r4,DAT_000490                                    = FFFFh\
+          038fc0 f6 f4 ec e0     mov        DAT_00e0ec,r4                                    = FFFFh\
+                             LAB_038fc4                                      XREF[3]:     038f80(j), 038f88(j), 038fba(j)  \
+          038fc4 e6 fc 9a 11     mov        r12,#0x119a\
+          038fc8 f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          038fcc da 06 16 09     calls      FUN_060916                                       undefined FUN_060916(short * par\
+          038fd0 e6 fc d4 91     mov        r12,#DAT_0091d4                                  = E1h\
+          038fd4 da 06 a4 09     calls      FUN_0609a4                                       ushort FUN_0609a4(short param_1)\
+          038fd8 c0 89           movbz      r9,RL4\
+          038fda 5c 79           shl        r9,#0x7\
+          038fdc f2 fc ba fa     mov        r12,DAT_00faba                                   = FFFFh\
+          038fe0 f0 d9           mov        r13,r9\
+          038fe2 da 06 62 05     calls      FUN_060562                                       undefined2 FUN_060562(ushort par\
+          038fe6 f0 84           mov        r8,r4\
+          038fe8 9a 2e 15 20     jnb        DAT_00fd5c.0x2,LAB_039016                        = FFFFh\
+          038fec 9a 2e 13 30     jnb        DAT_00fd5c.0x3,LAB_039016                        = FFFFh\
+          038ff0 e6 fc 07 0d     mov        r12,#0xd07\
+          038ff4 c2 fd 24 c4     movbz      r13,DAT_00c424                                   = FFh\
+          038ff8 da 06 82 08     calls      FUN_060882                                       undefined FUN_060882(byte * para\
+          038ffc e6 fc 57 9e     mov        r12,#PTR_LAB_009e57                              = 00b0f8\
+          039000 da 06 a4 09     calls      FUN_0609a4                                       ushort FUN_0609a4(short param_1)\
+          039004 c0 84           movbz      r4,RL4\
+          039006 5c 84           shl        r4,#0x8\
+          039008 f6 f4 10 e1     mov        DAT_00e110,r4                                    = FFFFh\
+          03900c f2 f5 ba fa     mov        r5,DAT_00faba                                    = FFFFh\
+          039010 f6 f5 dc e0     mov        DAT_00e0dc,r5                                    = FFFFh\
+          039014 0d 1e           jmpr       cc_UC,LAB_039052\
+                             LAB_039016                                      XREF[2]:     038fe8(j), 038fec(j)  \
+          039016 9a 2f 05 80     jnb        DAT_00fd5e.0x8,LAB_039024                        = FFFFh\
+          03901a f2 f4 ba fa     mov        r4,DAT_00faba                                    = FFFFh\
+          03901e f6 f4 dc e0     mov        DAT_00e0dc,r4                                    = FFFFh\
+          039022 0d 17           jmpr       cc_UC,LAB_039052\
+                             LAB_039024                                      XREF[1]:     039016(j)  \
+          039024 42 f8 10 e1     cmp        r8,DAT_00e110                                    = FFFFh\
+          039028 9d 05           jmpr       cc_NC,LAB_039034\
+          03902a 24 f8 10 e1     sub        DAT_00e110,r8                                    = FFFFh\
+          03902e f6 8e dc e0     mov        DAT_00e0dc,ZEROS                                 = FFFFh\
+          039032 0d 0f           jmpr       cc_UC,LAB_039052\
+                             LAB_039034                                      XREF[1]:     039028(j)  \
+          039034 f2 fc 10 e1     mov        r12,DAT_00e110                                   = FFFFh\
+          039038 7c 8c           shr        r12,#0x8\
+          03903a f0 d9           mov        r13,r9\
+          03903c da 06 4a 03     calls      FUN_06034a                                       undefined2 FUN_06034a(ushort par\
+          039040 f0 d4           mov        r13,r4\
+          039042 f2 fc ba fa     mov        r12,DAT_00faba                                   = FFFFh\
+          039046 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          03904a f6 f4 dc e0     mov        DAT_00e0dc,r4                                    = FFFFh\
+          03904e f6 8e 10 e1     mov        DAT_00e110,ZEROS                                 = FFFFh\
+                             LAB_039052                                      XREF[3]:     039014(j), 039022(j), 039032(j)  \
+          039052 f2 fc 10 e1     mov        r12,DAT_00e110                                   = FFFFh\
+          039056 7c 8c           shr        r12,#0x8\
+          039058 f0 d9           mov        r13,r9\
+          03905a da 06 4a 03     calls      FUN_06034a                                       undefined2 FUN_06034a(ushort par\
+          03905e f0 84           mov        r8,r4\
+          039060 f2 fc b6 fa     mov        r12,DAT_00fab6                                   = FFFFh\
+          039064 f0 d8           mov        r13,r8\
+          039066 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          03906a f6 f4 ee e0     mov        DAT_00e0ee,r4                                    = FFFFh\
+          03906e f2 fc d8 e0     mov        r12,DAT_00e0d8                                   = FFFFh\
+          039072 f2 fd ba fa     mov        r13,DAT_00faba                                   = FFFFh\
+          039076 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          03907a f0 c4           mov        r12,r4\
+          03907c f2 fd dc e0     mov        r13,DAT_00e0dc                                   = FFFFh\
+          039080 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          039084 f0 c4           mov        r12,r4\
+          039086 f0 d8           mov        r13,r8\
+          039088 da 06 ae 01     calls      FUN_0601ae                                       short FUN_0601ae(ushort param_1,\
+          03908c f6 f4 f0 e0     mov        DAT_00e0f0,r4                                    = FFFFh\
+          039090 8a 2d 02 90     jb         DAT_00fd5a.0x9,LAB_039098                        = FFFFh\
+          039094 9a 2f 08 c0     jnb        DAT_00fd5e.0xc,LAB_0390a8                        = FFFFh\
+                             LAB_039098                                      XREF[1]:     039090(j)  \
+          039098 f2 f4 dc e0     mov        r4,DAT_00e0dc                                    = FFFFh\
+          03909c 48 40           cmp        r4,#0x0\
+          03909e fd 02           jmpr       cc_ULE,LAB_0390a4\
+          0390a0 af 12           bset       DAT_00fd24.0xa                                   = FFFFh\
+          0390a2 0d 03           jmpr       cc_UC,LAB_0390aa\
+                             LAB_0390a4                                      XREF[1]:     03909e(j)  \
+          0390a4 ae 12           bclr       DAT_00fd24.offset DAT_00fbff                     = FFFFh\
+                                                                                             = FFh\
+          0390a6 0d 01           jmpr       cc_UC,LAB_0390aa\
+                             LAB_0390a8                                      XREF[1]:     039094(j)  \
+          0390a8 ae 12           bclr       DAT_00fd24.offset DAT_00fbff                     = FFFFh\
+                                                                                             = FFh\
+                             LAB_0390aa                                      XREF[2]:     0390a2(j), 0390a6(j)  \
+          0390aa 9a 2d 1f 90     jnb        DAT_00fd5a.0x9,LAB_0390ec                        = FFFFh\
+          0390ae f2 fc b6 fa     mov        r12,DAT_00fab6                                   = FFFFh\
+          0390b2 f2 fd d8 e0     mov        r13,DAT_00e0d8                                   = FFFFh\
+          0390b6 02 fd ba fa     add        r13,DAT_00faba                                   = FFFFh\
+          0390ba da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          0390be 42 f4 ca 06     cmp        r4,LAB_0006ca\
+          0390c2 9d 07           jmpr       cc_NC,LAB_0390d2\
+          0390c4 f2 f4 0a fb     mov        r4,DAT_00fb0a                                    = FFFFh\
+          0390c8 02 f4 a6 06     add        r4,LAB_0006a6\
+          0390cc 42 f4 0e fb     cmp        r4,DAT_00fb0e                                    = FFFFh\
+          0390d0 ed 02           jmpr       cc_UGT,LAB_0390d6\
+                             LAB_0390d2                                      XREF[1]:     0390c2(j)  \
+          0390d2 9f 12           bset       DAT_00fd24.offset DAT_00fbff                     = FFFFh\
+                                                                                             = FFh\
+          0390d4 0d 0c           jmpr       cc_UC,LAB_0390ee\
+                             LAB_0390d6                                      XREF[1]:     0390d0(j)  \
+          0390d6 f2 fc 1e fb     mov        r12,DAT_00fb1e                                   = FFFFh\
+          0390da f2 fd 24 fb     mov        r13,DAT_00fb24                                   = FFFFh\
+          0390de da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          0390e2 42 f4 ac 06     cmp        r4,LAB_0006aa+2\
+          0390e6 9d 03           jmpr       cc_NC,LAB_0390ee\
+          0390e8 9e 12           bclr       DAT_00fd24.offset DAT_00f9fe+1                   = FFFFh\
+          0390ea 0d 01           jmpr       cc_UC,LAB_0390ee\
+                             LAB_0390ec                                      XREF[1]:     0390aa(j)  \
+          0390ec 9e 12           bclr       DAT_00fd24.offset DAT_00f9fe+1                   = FFFFh\
+                             LAB_0390ee                                      XREF[3]:     0390d4(j), 0390e6(j), 0390ea(j)  \
+          0390ee f2 f4 0a fb     mov        r4,DAT_00fb0a                                    = FFFFh\
+          0390f2 f6 f4 0e fb     mov        DAT_00fb0e,r4                                    = FFFFh\
+          0390f6 8a 12 0c 90     jb         DAT_00fd24.0x9,LAB_039112                        = FFFFh\
+          0390fa 8a 12 0a a0     jb         DAT_00fd24.0xa,LAB_039112                        = FFFFh\
+          0390fe f2 f5 2c fb     mov        r5,DAT_00fb2c                                    = FFFFh\
+          039102 46 f5 ff ff     cmp        r5,#0xffff\
+          039106 8d 05           jmpr       cc_C,LAB_039112\
+          039108 f2 f2 2e fb     mov        r2,DAT_00fb2e                                    = FFFFh\
+          03910c 46 f2 ff ff     cmp        r2,#0xffff\
+          039110 9d 02           jmpr       cc_NC,LAB_039116\
+                             LAB_039112                                      XREF[3]:     0390f6(j), 0390fa(j), 039106(j)  \
+          039112 bf 12           bset       DAT_00fd24.offset DAT_00fbff                     = FFFFh\
+                                                                                             = FFh\
+          039114 0d 01           jmpr       cc_UC,LAB_039118\
+                             LAB_039116                                      XREF[1]:     039110(j)  \
+          039116 be 12           bclr       DAT_00fd24.offset DAT_00f3ff                     = FFFFh\
+                                                                                             = FFh\
+                             LAB_039118                                      XREF[1]:     039114(j)  \
+          039118 98 70           mov        r7,[r0+]\
+          03911a 98 80           mov        r8,[r0+]\
+          03911c 98 90           mov        r9,[r0+]\
+          03911e db 00           rets\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               ushort __stdcall FUN_039120(short param_1, ushort param_2)\
+             ushort            r5:2           <RETURN>\
+             short             r12:2          param_1\
+             ushort            r13:2          param_2\
+                             FUN_039120                                      XREF[1]:     FUN_076c9c:076cae(c)  \
+          039120 88 90           mov        [-r0],r9\
+          039122 da 03 12 a6     calls      FUN_03a612                                       undefined2 * FUN_03a612(void)\
+          039126 f7 8e c0 fa     movb       DAT_00fac0,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+          03912a c2 f9 0b c6     movbz      r9,DAT_00c60b                                    = FFh\
+          03912e f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          039132 49 86           cmpb       RL4,#0x6\
+                             switchD_039142::default\
+          039134 ea e0 36 94     jmpa       cc_UGT,LAB_039436\
+          039138 c0 84           movbz      r4,RL4\
+          03913a 5c 14           shl        r4,#0x1\
+          03913c 06 f4 30 6c     add        r4,#switchD_039142::switchdataD_006c30           = 7A80h\
+          039140 a8 44           mov        r4,[r4]=>DAT_006e2e                              = FF10h\
+                             switchD_039142::switchD\
+          039142 9c 04           jmpi       cc_UC,[r4]\
+          039144 f3 f8 3f ce     movb       RL4,DAT_00ce3f                                   = FFh\
+          039148 49 86           cmpb       RL4,#0x6\
+          03914a 3d 07           jmpr       cc_NE,LAB_03915a\
+          03914c e1 6a           movb       RL5,#0x6\
+          03914e f7 fa 0b c6     movb       DAT_00c60b,RL5                                   = FFh\
+          039152 da 03 4a a7     calls      FUN_03a74a                                       undefined FUN_03a74a(void)\
+          039156 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_03915a                                      XREF[1]:     03914a(j)  \
+          03915a f3 f8 3f ce     movb       RL4,DAT_00ce3f                                   = FFh\
+          03915e 49 85           cmpb       RL4,#0x5\
+          039160 3d 1f           jmpr       cc_NE,LAB_0391a0\
+          039162 da 03 4a a7     calls      FUN_03a74a                                       undefined FUN_03a74a(void)\
+          039166 da 03 1e a4     calls      FUN_03a41e                                       ushort FUN_03a41e(void)\
+          03916a 8a 49 02 00     jb         DAT_00fd92.0x0,LAB_039172                        = FFFFh\
+          03916e 9a 49 05 10     jnb        DAT_00fd92.0x1,LAB_03917c                        = FFFFh\
+                             LAB_039172                                      XREF[1]:     03916a(j)  \
+          039172 e1 68           movb       RL4,#0x6\
+          039174 f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          039178 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_03917c                                      XREF[1]:     03916e(j)  \
+          03917c f3 f8 e3 c2     movb       RL4,DAT_00c2e3                                   = FFh\
+          039180 2d 05           jmpr       cc_EQ,LAB_03918c\
+          039182 e1 3a           movb       RL5,#0x3\
+          039184 f7 fa 0b c6     movb       DAT_00c60b,RL5                                   = FFh\
+          039188 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_03918c                                      XREF[1]:     039180(j)  \
+          03918c e1 58           movb       RL4,#0x5\
+          03918e f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          039192 e1 1a           movb       RL5,#0x1\
+          039194 f7 fa c0 fa     movb       DAT_00fac0,RL5                                   = FFh\
+          039198 f6 8e e8 fa     mov        DAT_00fae8,ZEROS                                 = FFFFh\
+          03919c ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_0391a0                                      XREF[1]:     039160(j)  \
+          0391a0 25 8f 63 c3     subb       DAT_00c363,ONES                                  = FFh\
+                                                                                             = FFFFh\
+          0391a4 f3 f8 63 c3     movb       RL4,DAT_00c363                                   = FFh\
+          0391a8 47 f8 1e 00     cmpb       RL4,#0x1e\
+          0391ac 9d 03           jmpr       cc_NC,LAB_0391b4\
+          0391ae da 03 cc 6e     calls      FUN_036ecc                                       ushort FUN_036ecc(ushort param_1)\
+          0391b2 0d 04           jmpr       cc_UC,LAB_0391bc\
+                             LAB_0391b4                                      XREF[1]:     0391ac(j)  \
+          0391b4 e6 fc 6d 00     mov        r12,#0x6d\
+          0391b8 da 03 3a 78     calls      FUN_03783a                                       undefined FUN_03783a(char param_1)\
+                             LAB_0391bc                                      XREF[1]:     0391b2(j)  \
+          0391bc f3 f8 3f ce     movb       RL4,DAT_00ce3f                                   = FFh\
+          0391c0 49 86           cmpb       RL4,#0x6\
+          0391c2 ea 30 3c 94     jmpa       cc_NE,LAB_03943c\
+          0391c6 4f 52           bset       DAT_00fda4.0x4                                   = FFFFh\
+          0391c8 4f e8           bset       P7.0x4                                           = FFFFh\
+          0391ca 4e 2e           bclr       DAT_00fd5c.offset DAT_00ffef                     = FFFFh\
+                                                                                             = FFh\
+          0391cc ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+          0391d0 9a 2e 0b 70     jnb        DAT_00fd5c.0x7,LAB_0391ea                        = FFFFh\
+          0391d4 f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          0391d8 49 86           cmpb       RL4,#0x6\
+          0391da 2d 02           jmpr       cc_EQ,LAB_0391e0\
+          0391dc 3a 2e 2e 66     bmovn      DAT_00fd5c.0x6,DAT_00fd5c.offset DAT_00ffbe+1    = FFFFh\
+                             LAB_0391e0                                      XREF[1]:     0391da(j)  \
+          0391e0 e1 68           movb       RL4,#0x6\
+          0391e2 f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          0391e6 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_0391ea                                      XREF[1]:     0391d0(j)  \
+          0391ea 9a 09 0b 40     jnb        DAT_00fd12.0x4,LAB_039204                        = FFFFh\
+          0391ee f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          0391f2 49 81           cmpb       RL4,#0x1\
+          0391f4 2d 02           jmpr       cc_EQ,LAB_0391fa\
+          0391f6 3a 2e 2e 66     bmovn      DAT_00fd5c.0x6,DAT_00fd5c.offset DAT_00ffbe+1    = FFFFh\
+                             LAB_0391fa                                      XREF[1]:     0391f4(j)  \
+          0391fa e1 18           movb       RL4,#0x1\
+          0391fc f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          039200 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_039204                                      XREF[1]:     0391ea(j)  \
+          039204 9a 48 0a a0     jnb        DAT_00fd90.0xa,LAB_03921c                        = FFFFh\
+          039208 f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          03920c 49 82           cmpb       RL4,#0x2\
+          03920e 2d 01           jmpr       cc_EQ,LAB_039212\
+          039210 4e 2e           bclr       DAT_00fd5c.offset DAT_00ffef                     = FFFFh\
+                                                                                             = FFh\
+                             LAB_039212                                      XREF[1]:     03920e(j)  \
+          039212 e1 28           movb       RL4,#0x2\
+          039214 f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          039218 ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_03921c                                      XREF[1]:     039204(j)  \
+          03921c f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          039220 42 f4 be 06     cmp        r4,LAB_0006be\
+          039224 9d 06           jmpr       cc_NC,LAB_039232\
+          039226 c2 f5 96 01     movbz      r5,DAT_000196                                    = 38h\
+          03922a 5c 85           shl        r5,#0x8\
+          03922c 42 f5 b6 fa     cmp        r5,DAT_00fab6                                    = FFFFh\
+          039230 ed 03           jmpr       cc_UGT,LAB_039238\
+                             LAB_039232                                      XREF[1]:     039224(j)  \
+          039232 f3 f8 e3 c2     movb       RL4,DAT_00c2e3                                   = FFh\
+          039236 2d 05           jmpr       cc_EQ,LAB_039242\
+                             LAB_039238                                      XREF[1]:     039230(j)  \
+          039238 e1 38           movb       RL4,#0x3\
+          03923a f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          03923e ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_039242                                      XREF[1]:     039236(j)  \
+          039242 f2 fc b2 fa     mov        r12,DAT_00fab2                                   = FFFFh\
+          039246 f2 fd b8 fa     mov        r13,DAT_00fab8                                   = FFFFh\
+          03924a da 06 04 02     calls      FUN_060204                                       short FUN_060204(ushort param_1,\
+          03924e 46 f4 30 00     cmp        r4,#0x30\
+          039252 8d 05           jmpr       cc_C,LAB_03925e\
+          039254 f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          039258 42 f4 c2 06     cmp        r4,LAB_0006c2\
+          03925c 3d 68           jmpr       cc_NE,LAB_03932e\
+                             LAB_03925e                                      XREF[1]:     039252(j)  \
+          03925e f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          039262 49 85           cmpb       RL4,#0x5\
+          039264 3d 09           jmpr       cc_NE,LAB_039278\
+          039266 f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          03926a f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          03926e da 06 04 02     calls      FUN_060204                                       short FUN_060204(ushort param_1,\
+          039272 42 f4 b6 06     cmp        r4,LAB_0006b6\
+          039276 8d 17           jmpr       cc_C,LAB_0392a6\
+                             LAB_039278                                      XREF[1]:     039264(j)  \
+          039278 f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          03927c 49 85           cmpb       RL4,#0x5\
+          03927e 2d 09           jmpr       cc_EQ,LAB_039292\
+          039280 f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          039284 f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          039288 da 06 04 02     calls      FUN_060204                                       short FUN_060204(ushort param_1,\
+          03928c 42 f4 b4 06     cmp        r4,LAB_0006b2+2\
+          039290 8d 0a           jmpr       cc_C,LAB_0392a6\
+                             LAB_039292                                      XREF[1]:     03927e(j)  \
+          039292 f2 f4 b6 fa     mov        r4,DAT_00fab6                                    = FFFFh\
+          039296 42 f4 c2 06     cmp        r4,LAB_0006c2\
+          03929a 8d 49           jmpr       cc_C,LAB_03932e\
+          03929c f2 f5 b2 fa     mov        r5,DAT_00fab2                                    = FFFFh\
+          0392a0 42 f5 c2 06     cmp        r5,LAB_0006c2\
+          0392a4 fd 44           jmpr       cc_ULE,LAB_03932e\
+                             LAB_0392a6                                      XREF[2]:     039276(j), 039290(j)  \
+          0392a6 f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          0392aa 42 f4 c6 06     cmp        r4,LAB_0006c6\
+          0392ae fd 3f           jmpr       cc_ULE,LAB_03932e\
+          0392b0 8a 48 3d b0     jb         DAT_00fd90.0xb,LAB_03932e                        = FFFFh\
+          0392b4 f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          0392b8 49 84           cmpb       RL4,#0x4\
+          0392ba ea 20 3c 94     jmpa       cc_EQ,LAB_03943c\
+          0392be f2 f4 fa e0     mov        r4,DAT_00e0fa                                    = FFFFh\
+          0392c2 48 40           cmp        r4,#0x0\
+          0392c4 cd 0d           jmpr       cc_SLT,LAB_0392e0\
+          0392c6 6f 2e           bset       DAT_00fd5c.0x6                                   = FFFFh\
+          0392c8 46 f4 ff 1f     cmp        r4,#0x1fff\
+          0392cc bd 03           jmpr       cc_SLE,LAB_0392d4\
+          0392ce f6 8f f6 e0     mov        DAT_00e0f6,ONES                                  = FFFFh\
+          0392d2 0d 15           jmpr       cc_UC,LAB_0392fe\
+                             LAB_0392d4                                      XREF[1]:     0392cc(j)  \
+          0392d4 f2 f4 fa e0     mov        r4,DAT_00e0fa                                    = FFFFh\
+          0392d8 5c 34           shl        r4,#0x3\
+          0392da f6 f4 f6 e0     mov        DAT_00e0f6,r4                                    = FFFFh\
+          0392de 0d 0f           jmpr       cc_UC,LAB_0392fe\
+                             LAB_0392e0                                      XREF[1]:     0392c4(j)  \
+          0392e0 6e 2e           bclr       DAT_00fd5c.offset DAT_00ffbe+1                   = FFFFh\
+          0392e2 f2 f4 fa e0     mov        r4,DAT_00e0fa                                    = FFFFh\
+          0392e6 46 f4 00 e0     cmp        r4,#FUN_00e000\
+          0392ea ad 03           jmpr       cc_SGT,LAB_0392f2\
+          0392ec f6 8f f6 e0     mov        DAT_00e0f6,ONES                                  = FFFFh\
+          0392f0 0d 06           jmpr       cc_UC,LAB_0392fe\
+                             LAB_0392f2                                      XREF[1]:     0392ea(j)  \
+          0392f2 f2 f4 fa e0     mov        r4,DAT_00e0fa                                    = FFFFh\
+          0392f6 81 40           neg        r4\
+          0392f8 5c 34           shl        r4,#0x3\
+          0392fa f6 f4 f6 e0     mov        DAT_00e0f6,r4                                    = FFFFh\
+                             LAB_0392fe                                      XREF[3]:     0392d2(j), 0392de(j), 0392f0(j)  \
+          0392fe f2 fc f8 e0     mov        r12,DAT_00e0f8                                   = FFFFh\
+          039302 e6 fd 80 00     mov        r13,#0x80\
+          039306 c2 fe e1 c2     movbz      r14,DAT_00c2e1                                   = FFh\
+          03930a da 06 62 03     calls      FUN_060362                                       undefined2 FUN_060362(ushort par\
+          03930e f6 f4 6a f9     mov        DAT_00f96a,r4                                    = FFFFh\
+          039312 f2 f4 f6 e0     mov        r4,DAT_00e0f6                                    = FFFFh\
+          039316 42 f4 6a f9     cmp        r4,DAT_00f96a                                    = FFFFh\
+          03931a fd 04           jmpr       cc_ULE,LAB_039324\
+          03931c f2 f5 6a f9     mov        r5,DAT_00f96a                                    = FFFFh\
+          039320 f6 f5 f6 e0     mov        DAT_00e0f6,r5                                    = FFFFh\
+                             LAB_039324                                      XREF[1]:     03931a(j)  \
+          039324 e1 48           movb       RL4,#0x4\
+          039326 f7 f8 0b c6     movb       DAT_00c60b,RL4                                   = FFh\
+          03932a ea 00 3c 94     jmpa       cc_UC,LAB_03943c\
+                             LAB_03932e                                      XREF[5]:     03925c(j), 03929a(j), 0392a4(j), \
+                                                                                          0392ae(j), 0392b0(j)  \
+          03932e f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          039332 49 85           cmpb       RL4,#0x5\
+          039334 ea 20 2e 94     jmpa       cc_EQ,LAB_03942e\
+          039338 49 83           cmpb       RL4,#0x3\
+          03933a 3d 0c           jmpr       cc_NE,LAB_039354\
+          03933c f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          039340 42 f4 c0 06     cmp        r4,LAB_0006be+2\
+          039344 9d 07           jmpr       cc_NC,LAB_039354\
+          039346 c2 f5 96 01     movbz      r5,DAT_000196                                    = 38h\
+          03934a 5c 85           shl        r5,#0x8\
+          03934c 42 f5 b6 fa     cmp        r5,DAT_00fab6                                    = FFFFh\
+          039350 ea e0 3c 94     jmpa       cc_UGT,LAB_03943c\
+                             LAB_039354                                      XREF[2]:     03933a(j), 039344(j)  \
+          039354 f3 f8 0b c6     movb       RL4,DAT_00c60b                                   = FFh\
+          039358 49 84           cmpb       RL4,#0x4\
+          03935a 3d 26           jmpr       cc_NE,LAB_0393a8\
+          03935c f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          039360 42 f4 c6 06     cmp        r4,LAB_0006c6\
+          039364 8d 1f           jmpr       cc_C,LAB_0393a4\
+          039366 f2 fc b2 fa     mov        r12,DAT_00fab2                                   = FFFFh\
+          03936a f0 d4           mov        r13,r4\
+          03936c da 06 04 02     calls      FUN_060204                                       short FUN_060204(ushort param_1,\
+          039370 46 f4 30 00     cmp        r4,#0x30\
+          039374 8d 05           jmpr       cc_C,LAB_039380\
+          039376 f2 f4 b8 fa     mov        r4,DAT_00fab8                                    = FFFFh\
+          03937a 42 f4 c2 06     cmp        r4,LAB_0006c2\
+          03937e 3d 12           jmpr       cc_NE,LAB_0393a4\
+                             LAB_039380                                      XREF[1]:     039374(j)  \
+          039380 f2 fc b8 fa     mov        r12,DAT_00fab8                                   = FFFFh\
+          039384 f2 fd b6 fa     mov        r13,DAT_00fab6                                   = FFFFh\
+          039388 da 06 20 02     calls      FUN_060220                                       short FUN_060220(ushort param_1,\
+          03938c 42 f4 b4 06     cmp        r4,LAB_0006b2+2\
+          039390 8d 09           jmpr       cc_C,LAB_0393a4\
+          039392 f3 f8 01 c3     movb       RL4,DAT_00c301                                   = FFh\
+          039396 47 f8 ff 00     cmpb       RL4,#0xff\
+          03939a 2d 06           jmpr       cc_EQ,LAB_0393a8\
+          03939c 09 81           addb       RL4,#0x1\

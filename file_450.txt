@@ -1,0 +1,640 @@
+          07843e f2 f0 9a fe     mov        r0,CC13                                          = FFFFh\
+          078442 6d 07           jmpr       cc_N,LAB_078452\
+          078444 d1 10           atomic     #0x2\
+          078446 f2 f1 b8 fb     mov        r1,DAT_00fbb8                                    = FFFFh\
+          07844a 9a cf 0e 70     jnb        T1IC.0x7,LAB_07846a                              = FFFFh\
+          07844e 08 11           add        r1,#0x1\
+          078450 0d 0c           jmpr       cc_UC,LAB_07846a\
+                             LAB_078452                                      XREF[1]:     078442(j)  \
+          078452 f2 f1 b8 fb     mov        r1,DAT_00fbb8                                    = FFFFh\
+          078456 42 8f 52 fe     cmp        ONES,T1                                          = FFFFh\
+          07845a 7d 07           jmpr       cc_NN,LAB_07846a\
+          07845c d1 10           atomic     #0x2\
+          07845e 9a cf 01 70     jnb        T1IC.0x7,LAB_078464                              = FFFFh\
+          078462 0d 03           jmpr       cc_UC,LAB_07846a\
+                             LAB_078464                                      XREF[1]:     07845e(j)  \
+          078464 f2 f1 b8 fb     mov        r1,DAT_00fbb8                                    = FFFFh\
+          078468 28 11           sub        r1,#0x1\
+                             LAB_07846a                                      XREF[4]:     07844a(j), 078450(j), 07845a(j), \
+                                                                                          078462(j)  \
+          07846a f6 f0 7a fb     mov        DAT_00fb7a,r0                                    = FFFFh\
+          07846e f6 f1 7c fb     mov        DAT_00fb7c,r1                                    = FFFFh\
+          078472 f2 f1 fe fc     mov        r1,DSTP7                                         = FFFFh\
+          078476 d4 21 fc ff     mov        r2,[r1+#0xfffc]=>FUN_01fff8+3\
+          07847a d4 11 fe ff     mov        r1,[r1+#offset LAB_01fffc+1]\
+          07847e 20 12           sub        r1,r2\
+          078480 46 f1 1e 00     cmp        r1,#0x1e\
+          078484 9d 03           jmpr       cc_NC,LAB_07848c\
+          078486 f2 f1 b0 fb     mov        r1,DAT_00fbb0                                    = FFFFh\
+          07848a 0d 02           jmpr       cc_UC,LAB_078490\
+                             LAB_07848c                                      XREF[1]:     078484(j)  \
+          07848c f6 f1 b0 fb     mov        DAT_00fbb0,r1                                    = FFFFh\
+                             LAB_078490                                      XREF[1]:     07848a(j)  \
+          078490 f2 f2 50 fe     mov        r2,T0                                            = FFh\
+          078494 22 f0 9e fe     sub        r0,CC15                                          = FFFFh\
+          078498 7d 0b           jmpr       cc_NN,LAB_0784b0\
+          07849a 00 01           add        r0,r1\
+          07849c 7d 02           jmpr       cc_NN,LAB_0784a2\
+          07849e f2 f0 1c ff     mov        r0,ZEROS                                         = FFFFh\
+                             LAB_0784a2                                      XREF[1]:     07849c(j)  \
+          0784a2 f2 f2 50 fe     mov        r2,T0                                            = FFh\
+          0784a6 02 f2 1e ff     add        r2,ONES                                          = FFFFh\
+          0784aa 3d 02           jmpr       cc_NE,LAB_0784b0\
+          0784ac e6 f2 78 00     mov        r2,#0x78\
+                             LAB_0784b0                                      XREF[2]:     078498(j), 0784aa(j)  \
+          0784b0 f7 f4 3f e5     movb       DAT_00e53f,RL2                                   = FFh\
+          0784b4 f6 f0 76 fb     mov        DAT_00fb76,r0                                    = FFFFh\
+          0784b8 f6 f1 78 fb     mov        DAT_00fb78,r1                                    = FFFFh\
+                             LAB_0784bc                                      XREF[1]:     07843a(j)  \
+          0784bc 9f 15           bset       DAT_00fd2a.0x9                                   = FFFFh\
+          0784be fc 08           pop        CP                                               = FFFFh\
+          0784c0 fb 88           reti\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined __stdcall FUN_0784c2(void)\
+             undefined         <UNASSIGNED>   <RETURN>\
+                             FUN_0784c2                                      XREF[1]:     050120(c)  \
+          0784c2 c6 08 ae f8     scxt       CP,#DAT_00f8ae                                   = FFFFh\
+                                                                                             = FFh\
+          0784c6 cc 00           nop\
+          0784c8 e6 fa 88 fb     mov        r10,#DAT_00fb88                                  = FFh\
+          0784cc f6 fa fe fc     mov        DSTP7,r10                                        = FFFFh\
+          0784d0 e6 fa a8 fb     mov        r10,#DAT_00fba8                                  = FFFFh\
+          0784d4 94 0a 84 fb     mov        DAT_00fb84,[r10]=>DAT_00fba8                     = FFFFh\
+          0784d8 08 a2           add        r10,#0x2\
+          0784da 94 0a 86 fb     mov        DAT_00fb86,[r10]=>DAT_00fbaa                     = FFFFh\
+          0784de e6 67 12 02     mov        PECC7,#DAT_000212                                = FFFFh\
+          0784e2 fc 08           pop        CP                                               = FFFFh\
+          0784e4 fb 88           reti\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined __stdcall FUN_0784e6(void)\
+             undefined         <UNASSIGNED>   <RETURN>\
+                             FUN_0784e6                                      XREF[1]:     050140(c)  \
+          0784e6 c6 08 ae f8     scxt       CP,#DAT_00f8ae                                   = FFFFh\
+                                                                                             = FFh\
+          0784ea 9a 15 1b 00     jnb        DAT_00fd2a.0x0,LAB_078524                        = FFFFh\
+          0784ee ef 14           bset       DAT_00fd28.0xe                                   = FFFFh\
+          0784f0 09 51           addb       RH2,#0x1\
+          0784f2 49 52           cmpb       RH2,#0x2\
+          0784f4 fd 3d           jmpr       cc_ULE,LAB_078570\
+          0784f6 24 8f e6 e7     sub        DAT_00e7e6,ONES                                  = FFFFh\
+          0784fa d1 80           extr       #0x1\
+          0784fc 0a b8 ff 00     bfldl      CC24IC,#0x0,#0xff                                = FFFFh\
+          078500 0a b4 ff 00     bfldl      T6IC,#0x0,#0xff                                  = FFFFh\
+          078504 0a ca ff 00     bfldl      CC14IC,#0x0,#0xff                                = FFFFh\
+          078508 0a cb ff 00     bfldl      CC15IC,#0x0,#0xff                                = FFFFh\
+          07850c 0a b3 ff 00     bfldl      T5IC,#0x0,#0xff                                  = FFFFh\
+          078510 0a b5 ff 00     bfldl      CRIC,#0x0,#0xff                                  = FFFFh\
+          078514 6e a4           bclr       T6CON.offset DAT_00ffbe+1                        = FFFFh\
+          078516 6e a3           bclr       T5CON.offset DAT_00ffbe+1                        = FFFFh\
+          078518 6e a8           bclr       T01CON.offset DAT_00ffbe+1                       = FFFFh\
+          07851a 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          07851c 7e 14           bclr       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          07851e bf 14           bset       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          078520 6e 15           bclr       DAT_00fd2a.offset DAT_00ffbe+1                   = FFFFh\
+          078522 0d 26           jmpr       cc_UC,LAB_078570\
+                             LAB_078524                                      XREF[1]:     0784ea(j)  \
+          078524 f2 f1 fe fc     mov        r1,DSTP7                                         = FFFFh\
+          078528 d4 01 fc ff     mov        r0,[r1+#0xfffc]=>FUN_01fff8+3\
+          07852c d4 11 fe ff     mov        r1,[r1+#offset LAB_01fffc+1]\
+          078530 20 10           sub        r1,r0\
+          078532 46 f1 1e 00     cmp        r1,#0x1e\
+          078536 9d 03           jmpr       cc_NC,LAB_07853e\
+          078538 f2 f1 b0 fb     mov        r1,DAT_00fbb0                                    = FFFFh\
+          07853c 0d 02           jmpr       cc_UC,LAB_078542\
+                             LAB_07853e                                      XREF[1]:     078536(j)  \
+          07853e f6 f1 b0 fb     mov        DAT_00fbb0,r1                                    = FFFFh\
+                             LAB_078542                                      XREF[1]:     07853c(j)  \
+          078542 46 f1 8d 20     cmp        r1,#0x208d\
+          078546 fd 14           jmpr       cc_ULE,LAB_078570\
+          078548 d1 80           extr       #0x1\
+          07854a 0a b8 ff 00     bfldl      CC24IC,#0x0,#0xff                                = FFFFh\
+          07854e 0a b4 ff 00     bfldl      T6IC,#0x0,#0xff                                  = FFFFh\
+          078552 0a ca ff 00     bfldl      CC14IC,#0x0,#0xff                                = FFFFh\
+          078556 0a cb ff 00     bfldl      CC15IC,#0x0,#0xff                                = FFFFh\
+          07855a 0a b3 ff 00     bfldl      T5IC,#0x0,#0xff                                  = FFFFh\
+          07855e 0a b5 ff 00     bfldl      CRIC,#0x0,#0xff                                  = FFFFh\
+          078562 6e a4           bclr       T6CON.offset DAT_00ffbe+1                        = FFFFh\
+          078564 6e a3           bclr       T5CON.offset DAT_00ffbe+1                        = FFFFh\
+          078566 6e a8           bclr       T01CON.offset DAT_00ffbe+1                       = FFFFh\
+          078568 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          07856a 7e 14           bclr       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          07856c bf 14           bset       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          07856e 6e 15           bclr       DAT_00fd2a.offset DAT_00ffbe+1                   = FFFFh\
+                             LAB_078570                                      XREF[3]:     0784f4(j), 078522(j), 078546(j)  \
+          078570 fc 08           pop        CP                                               = FFFFh\
+          078572 fb 88           reti\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined __stdcall FUN_078574(void)\
+             undefined         <UNASSIGNED>   <RETURN>\
+                             FUN_078574                                      XREF[1]:     050184(c)  \
+          078574 c6 08 ae f8     scxt       CP,#DAT_00f8ae                                   = FFFFh\
+                                                                                             = FFh\
+          078578 cc 00           nop\
+          07857a 9c 04           jmpi       cc_UC,[r4]\
+          07857c 6f 15           bset       DAT_00fd2a.0x6                                   = FFFFh\
+          07857e 1f 15           bset       DAT_00fd2a.0x1                                   = FFFFh\
+          078580 6f a3           bset       T5CON.0x6                                        = FFFFh\
+          078582 f2 f9 9e fe     mov        r9,CC15                                          = FFFFh\
+          078586 e6 f4 92 85     mov        r4,#DAT_008592                                   = F2h\
+          07858a 22 38 1e ff     sub        CC24,ONES                                        = FFFFh\
+          07858e ea 00 e6 92     jmpa       cc_UC,LAB_0792e6\
+          078592 f2 f5 9e fe     mov        r5,CC15                                          = FFFFh\
+          078596 20 59           sub        r5,r9\
+          078598 f2 f9 9e fe     mov        r9,CC15                                          = FFFFh\
+          07859c 46 f5 8d 20     cmp        r5,#0x208d\
+          0785a0 ed 32           jmpr       cc_UGT,LAB_078606\
+          0785a2 46 f5 1e 00     cmp        r5,#0x1e\
+          0785a6 8d 1c           jmpr       cc_C,LAB_0785e0\
+          0785a8 7f 14           bset       DAT_00fd28.0x7                                   = FFFFh\
+          0785aa 8a e0 06 e0     jb         P2.0xe,LAB_0785ba                                = FFFFh\
+          0785ae e0 06           mov        r6,#0x0\
+          0785b0 f3 f2 3a e5     movb       RL1,DAT_00e53a                                   = FFh\
+          0785b4 f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+          0785b8 0d 06           jmpr       cc_UC,LAB_0785c6\
+                             LAB_0785ba                                      XREF[1]:     0785aa(j)  \
+          0785ba e6 f6 ff ff     mov        r6,#0xffff\
+          0785be f3 f2 3b e5     movb       RL1,DAT_00e53b                                   = FFh\
+          0785c2 f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+                             LAB_0785c6                                      XREF[1]:     0785b8(j)  \
+          0785c6 25 8f 3d e5     subb       DAT_00e53d,ONES                                  = FFh\
+                                                                                             = FFFFh\
+          0785ca f6 f5 b0 fb     mov        DAT_00fbb0,r5                                    = FFFFh\
+          0785ce f0 35           mov        r3,r5\
+          0785d0 f0 05           mov        r0,r5\
+          0785d2 c2 f2 40 e5     movbz      r2,DAT_00e540                                    = FFh\
+          0785d6 e6 f4 32 86     mov        r4,#DAT_008632                                   = 07h\
+          0785da 22 38 1e ff     sub        CC24,ONES                                        = FFFFh\
+          0785de 0d 27           jmpr       cc_UC,LAB_07862e\
+                             LAB_0785e0                                      XREF[1]:     0785a6(j)  \
+          0785e0 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          0785e2 f7 8e 3d e5     movb       DAT_00e53d,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+          0785e6 e6 f4 92 85     mov        r4,#DAT_008592                                   = F2h\
+          0785ea e6 38 02 10     mov        CC24,#0x1002                                     = FFFFh\
+          0785ee d1 90           extr       #0x2\
+          0785f0 e6 28 01 10     mov        T7,#0x1001                                       = FFh\
+          0785f4 0a b8 80 00     bfldl      CC24IC,#0x0,#0x80=>CC4IC                         = FFFFh\
+          0785f8 1f 15           bset       DAT_00fd2a.0x1                                   = FFFFh\
+          0785fa e6 f1 84 80     mov        r1,#0x8084\
+          0785fe f6 f1 7e fb     mov        DAT_00fb7e,r1                                    = FFFFh\
+          078602 6f 90           bset       T78CON.0x6                                       = FFFFh\
+          078604 0d 14           jmpr       cc_UC,LAB_07862e\
+                             LAB_078606                                      XREF[1]:     0785a0(j)  \
+          078606 d1 80           extr       #0x1\
+          078608 0a b8 ff 00     bfldl      CC24IC,#0x0,#0xff                                = FFFFh\
+          07860c 0a b4 ff 00     bfldl      T6IC,#0x0,#0xff                                  = FFFFh\
+          078610 0a ca ff 00     bfldl      CC14IC,#0x0,#0xff                                = FFFFh\
+          078614 0a cb ff 00     bfldl      CC15IC,#0x0,#0xff                                = FFFFh\
+          078618 0a b3 ff 00     bfldl      T5IC,#0x0,#0xff                                  = FFFFh\
+          07861c 0a b5 ff 00     bfldl      CRIC,#0x0,#0xff                                  = FFFFh\
+          078620 6e a4           bclr       T6CON.offset DAT_00ffbe+1                        = FFFFh\
+          078622 6e a3           bclr       T5CON.offset DAT_00ffbe+1                        = FFFFh\
+          078624 6e a8           bclr       T01CON.offset DAT_00ffbe+1                       = FFFFh\
+          078626 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          078628 7e 14           bclr       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          07862a bf 14           bset       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          07862c 6e 15           bclr       DAT_00fd2a.offset DAT_00ffbe+1                   = FFFFh\
+                             LAB_07862e                                      XREF[2]:     0785de(j), 078604(j)  \
+          07862e ea 00 e6 92     jmpa       cc_UC,LAB_0792e6\
+          078632 c6 87 00 00     scxt       MDC,#0x0                                         = FFFFh\
+          078636 ec 06           push       MDH                                              = FFh\
+          078638 ec 07           push       MDL                                              = FFh\
+          07863a f2 f5 9e fe     mov        r5,CC15                                          = FFFFh\
+          07863e 20 59           sub        r5,r9\
+          078640 f2 f9 9e fe     mov        r9,CC15                                          = FFFFh\
+          078644 46 f5 8d 20     cmp        r5,#0x208d\
+          078648 ea e0 40 87     jmpa       cc_UGT,LAB_078740\
+          07864c 46 f5 1e 00     cmp        r5,#0x1e\
+          078650 8d 64           jmpr       cc_C,LAB_07871a\
+          078652 1b 00           mulu       r0,r0\
+          078654 7b 33           divlu      r3\
+          078656 4d 0b           jmpr       cc_V,LAB_07866e\
+          078658 f0 30           mov        r3,r0\
+          07865a f2 f0 0e fe     mov        r0,MDL                                           = FFh\
+          07865e c5 fb 0c fe     movbz      MDH,RH5                                          = FFh\
+          078662 e6 07 00 00     mov        MDL,#0x0                                         = FFh\
+          078666 f7 fa 0f fe     movb       DAT_00fe0f,RL5                                   = FFh\
+          07866a 7b 00           divlu      r0\
+          07866c 5d 02           jmpr       cc_NV,LAB_078672\
+                             LAB_07866e                                      XREF[1]:     078656(j)  \
+          07866e f2 07 1e ff     mov        MDL,ONES                                         = FFh\
+                                                                                             = FFFFh\
+                             LAB_078672                                      XREF[1]:     07866c(j)  \
+          078672 f0 05           mov        r0,r5\
+          078674 f2 f7 0e fe     mov        r7,MDL                                           = FFh\
+          078678 46 f7 00 02     cmp        r7,#0x200\
+          07867c ed 36           jmpr       cc_UGT,LAB_0786ea\
+          07867e 46 f7 80 00     cmp        r7,#0x80\
+          078682 8d 33           jmpr       cc_C,LAB_0786ea\
+          078684 5c 16           shl        r6,#0x1\
+          078686 4a e0 f6 e0     bmov       r6.0x0,P2.0xe                                    = FFFFh\
+          07868a f6 f5 b0 fb     mov        DAT_00fbb0,r5                                    = FFFFh\
+          07868e 2a f6 f6 10     bcmp       r6.0x0,r6.0x1\
+          078692 7d 0d           jmpr       cc_NN,LAB_0786ae\
+          078694 9f 14           bset       DAT_00fd28.0x9                                   = FFFFh\
+          078696 8a f6 05 00     jb         r6.0x0,LAB_0786a4\
+          07869a f3 f2 3a e5     movb       RL1,DAT_00e53a                                   = FFh\
+          07869e f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+          0786a2 0d 05           jmpr       cc_UC,LAB_0786ae\
+                             LAB_0786a4                                      XREF[1]:     078696(j)  \
+          0786a4 f3 f2 3b e5     movb       RL1,DAT_00e53b                                   = FFh\
+          0786a8 f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+          0786ac 0d 00           jmpr       cc_UC,LAB_0786ae\
+                             LAB_0786ae                                      XREF[3]:     078692(j), 0786a2(j), 0786ac(j)  \
+          0786ae f3 f2 3d e5     movb       RL1,DAT_00e53d                                   = FFh\
+          0786b2 47 f2 78 00     cmpb       RL1,#0x78\
+          0786b6 8d 02           jmpr       cc_C,LAB_0786bc\
+          0786b8 f7 8e 3d e5     movb       DAT_00e53d,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+                             LAB_0786bc                                      XREF[1]:     0786b6(j)  \
+          0786bc 25 8f 3d e5     subb       DAT_00e53d,ONES                                  = FFh\
+                                                                                             = FFFFh\
+          0786c0 28 21           sub        r2,#0x1\
+          0786c2 3d 0b           jmpr       cc_NE,LAB_0786da\
+          0786c4 af 14           bset       DAT_00fd28.0xa                                   = FFFFh\
+          0786c6 cf 14           bset       DAT_00fd28.0xc                                   = FFFFh\
+          0786c8 e6 f4 72 87     mov        r4,#DAT_008772                                   = 46h    F\
+          0786cc f2 f8 9e fe     mov        r8,CC15                                          = FFFFh\
+          0786d0 2e 15           bclr       DAT_00fd2a.offset DAT_00fffb                     = FFFFh\
+                                                                                             = FFh\
+          0786d2 46 f5 f4 01     cmp        r5,#0x1f4\
+          0786d6 fd 01           jmpr       cc_ULE,LAB_0786da\
+          0786d8 2f 15           bset       DAT_00fd2a.0x2                                   = FFFFh\
+                             LAB_0786da                                      XREF[2]:     0786c2(j), 0786d6(j)  \
+          0786da 22 38 1e ff     sub        CC24,ONES                                        = FFFFh\
+          0786de 5a 14 14 cc     bor        DAT_00fd28.0xc,DAT_00fd28.0xc                    = FFFFh\
+          0786e2 9d 02           jmpr       cc_NC,LAB_0786e8\
+          0786e4 d1 80           extr       #0x1\
+          0786e6 7f c7           bset       XP1IC.0x7                                        = FFFFh\
+                             LAB_0786e8                                      XREF[1]:     0786e2(j)  \
+          0786e8 0d 3f           jmpr       cc_UC,LAB_078768\
+                             LAB_0786ea                                      XREF[2]:     07867c(j), 078682(j)  \
+          0786ea 46 f7 80 03     cmp        r7,#0x380\
+          0786ee ed 15           jmpr       cc_UGT,LAB_07871a\
+          0786f0 46 f7 80 02     cmp        r7,#0x280\
+          0786f4 8d 12           jmpr       cc_C,LAB_07871a\
+          0786f6 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          0786f8 f7 8e 3d e5     movb       DAT_00e53d,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+          0786fc e6 f4 92 85     mov        r4,#DAT_008592                                   = F2h\
+          078700 e6 38 02 10     mov        CC24,#0x1002                                     = FFFFh\
+          078704 d1 90           extr       #0x2\
+          078706 e6 28 01 10     mov        T7,#0x1001                                       = FFh\
+          07870a 0a b8 80 00     bfldl      CC24IC,#0x0,#0x80=>CC4IC                         = FFFFh\
+          07870e 1f 15           bset       DAT_00fd2a.0x1                                   = FFFFh\
+          078710 e0 01           mov        r1,#0x0\
+          078712 f6 f1 7e fb     mov        DAT_00fb7e,r1                                    = FFFFh\
+          078716 6f 90           bset       T78CON.0x6                                       = FFFFh\
+          078718 0d 27           jmpr       cc_UC,LAB_078768\
+                             LAB_07871a                                      XREF[3]:     078650(j), 0786ee(j), 0786f4(j)  \
+          07871a 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          07871c f7 8e 3d e5     movb       DAT_00e53d,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+          078720 e6 f4 92 85     mov        r4,#DAT_008592                                   = F2h\
+          078724 e6 38 02 10     mov        CC24,#0x1002                                     = FFFFh\
+          078728 d1 90           extr       #0x2\
+          07872a e6 28 01 10     mov        T7,#0x1001                                       = FFh\
+          07872e 0a b8 80 00     bfldl      CC24IC,#0x0,#0x80=>CC4IC                         = FFFFh\
+          078732 1f 15           bset       DAT_00fd2a.0x1                                   = FFFFh\
+          078734 e6 f1 84 80     mov        r1,#0x8084\
+          078738 f6 f1 7e fb     mov        DAT_00fb7e,r1                                    = FFFFh\
+          07873c 6f 90           bset       T78CON.0x6                                       = FFFFh\
+          07873e 0d 14           jmpr       cc_UC,LAB_078768\
+                             LAB_078740                                      XREF[1]:     078648(j)  \
+          078740 d1 80           extr       #0x1\
+          078742 0a b8 ff 00     bfldl      CC24IC,#0x0,#0xff                                = FFFFh\
+          078746 0a b4 ff 00     bfldl      T6IC,#0x0,#0xff                                  = FFFFh\
+          07874a 0a ca ff 00     bfldl      CC14IC,#0x0,#0xff                                = FFFFh\
+          07874e 0a cb ff 00     bfldl      CC15IC,#0x0,#0xff                                = FFFFh\
+          078752 0a b3 ff 00     bfldl      T5IC,#0x0,#0xff                                  = FFFFh\
+          078756 0a b5 ff 00     bfldl      CRIC,#0x0,#0xff                                  = FFFFh\
+          07875a 6e a4           bclr       T6CON.offset DAT_00ffbe+1                        = FFFFh\
+          07875c 6e a3           bclr       T5CON.offset DAT_00ffbe+1                        = FFFFh\
+          07875e 6e a8           bclr       T01CON.offset DAT_00ffbe+1                       = FFFFh\
+          078760 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          078762 7e 14           bclr       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          078764 bf 14           bset       DAT_00fd28.offset CC3IC+1                        = FFFFh\
+          078766 6e 15           bclr       DAT_00fd2a.offset DAT_00ffbe+1                   = FFFFh\
+                             LAB_078768                                      XREF[3]:     0786e8(j), 078718(j), 07873e(j)  \
+          078768 fc 07           pop        MDL                                              = FFh\
+          07876a fc 06           pop        MDH                                              = FFh\
+          07876c fc 87           pop        MDC                                              = FFFFh\
+          07876e ea 00 e6 92     jmpa       cc_UC,LAB_0792e6\
+          078772 c6 87 00 00     scxt       MDC,#0x0                                         = FFFFh\
+          078776 ec 06           push       MDH                                              = FFh\
+          078778 ec 07           push       MDL                                              = FFh\
+          07877a f2 f5 9e fe     mov        r5,CC15                                          = FFFFh\
+          07877e 20 59           sub        r5,r9\
+          078780 f2 f9 9e fe     mov        r9,CC15                                          = FFFFh\
+          078784 46 f5 1e 00     cmp        r5,#0x1e\
+          078788 ea 80 0c 8c     jmpa       cc_C,LAB_078c0c\
+          07878c 5c 16           shl        r6,#0x1\
+          07878e 4a e0 f6 e0     bmov       r6.0x0,P2.0xe                                    = FFFFh\
+          078792 2a f6 f6 10     bcmp       r6.0x0,r6.0x1\
+          078796 7d 0d           jmpr       cc_NN,LAB_0787b2\
+          078798 9f 14           bset       DAT_00fd28.0x9                                   = FFFFh\
+          07879a 8a f6 05 00     jb         r6.0x0,LAB_0787a8\
+          07879e f3 f2 3a e5     movb       RL1,DAT_00e53a                                   = FFh\
+          0787a2 f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+          0787a6 0d 05           jmpr       cc_UC,LAB_0787b2\
+                             LAB_0787a8                                      XREF[1]:     07879a(j)  \
+          0787a8 f3 f2 3b e5     movb       RL1,DAT_00e53b                                   = FFh\
+          0787ac f7 f2 3d e5     movb       DAT_00e53d,RL1                                   = FFh\
+          0787b0 0d 00           jmpr       cc_UC,LAB_0787b2\
+                             LAB_0787b2                                      XREF[3]:     078796(j), 0787a6(j), 0787b0(j)  \
+          0787b2 f3 f2 3d e5     movb       RL1,DAT_00e53d                                   = FFh\
+          0787b6 47 f2 78 00     cmpb       RL1,#0x78\
+          0787ba 8d 02           jmpr       cc_C,LAB_0787c0\
+          0787bc f7 8e 3d e5     movb       DAT_00e53d,ZEROS                                 = FFh\
+                                                                                             = FFFFh\
+                             LAB_0787c0                                      XREF[1]:     0787ba(j)  \
+          0787c0 25 8f 3d e5     subb       DAT_00e53d,ONES                                  = FFh\
+                                                                                             = FFFFh\
+          0787c4 1b 00           mulu       r0,r0\
+          0787c6 7b 33           divlu      r3\
+          0787c8 4d 0b           jmpr       cc_V,LAB_0787e0\
+          0787ca f0 30           mov        r3,r0\
+          0787cc f2 f0 0e fe     mov        r0,MDL                                           = FFh\
+          0787d0 c5 fb 0c fe     movbz      MDH,RH5                                          = FFh\
+          0787d4 e6 07 00 00     mov        MDL,#0x0                                         = FFh\
+          0787d8 f7 fa 0f fe     movb       DAT_00fe0f,RL5                                   = FFh\
+          0787dc 7b 00           divlu      r0\
+          0787de 5d 02           jmpr       cc_NV,LAB_0787e4\
+                             LAB_0787e0                                      XREF[1]:     0787c8(j)  \
+          0787e0 f2 07 1e ff     mov        MDL,ONES                                         = FFh\
+                                                                                             = FFFFh\
+                             LAB_0787e4                                      XREF[1]:     0787de(j)  \
+          0787e4 f0 05           mov        r0,r5\
+          0787e6 f2 f7 0e fe     mov        r7,MDL                                           = FFh\
+          0787ea 46 f7 80 03     cmp        r7,#0x380\
+          0787ee ea e0 98 8b     jmpa       cc_UGT,LAB_078b98\
+          0787f2 46 f7 80 02     cmp        r7,#0x280\
+          0787f6 ea 80 98 8b     jmpa       cc_C,LAB_078b98\
+          0787fa 46 f5 a7 61     cmp        r5,#DAT_0061a7                                   = FFh\
+          0787fe ea e0 6e 8b     jmpa       cc_UGT,LAB_078b6e\
+          078802 6e 90           bclr       T78CON.offset DAT_00ffbe+1                       = FFFFh\
+          078804 68 63           and        r6,#0x3\
+          078806 ea 30 9a 89     jmpa       cc_NE,LAB_07899a\
+          07880a e1 02           movb       RL1,#0x0\
+          07880c f7 f2 3c e5     movb       DAT_00e53c,RL1                                   = FFh\
+          078810 f2 f1 9e fe     mov        r1,CC15                                          = FFFFh\
+          078814 f6 f1 86 fb     mov        DAT_00fb86,r1                                    = FFFFh\
+          078818 20 13           sub        r1,r3\
+          07881a f6 f1 84 fb     mov        DAT_00fb84,r1                                    = FFFFh\
+          07881e f6 f3 b0 fb     mov        DAT_00fbb0,r3                                    = FFFFh\
+          078822 f0 73           mov        r7,r3\
+          078824 e6 f6 ae 45     mov        r6,#DAT_0045ae                                   = FFFFh\
+          078828 98 16           mov        r1,[r6+]=>DAT_0045ae                             = FFFFh\
+          07882a f6 f1 70 fe     mov        CC24,r1                                          = FFFFh\
+          07882e 98 46           mov        r4,[r6+]=>DAT_0045b0                             = FFFFh\
+          078830 9a 15 02 20     jnb        DAT_00fd2a.0x2,LAB_078838                        = FFFFh\
+          078834 0a b5 ff 73     bfldl      CRIC,#0x73,#0xff                                 = FFFFh\
+                             LAB_078838                                      XREF[1]:     078830(j)  \
+          078838 d1 80           extr       #0x1\
+          07883a e6 28 01 00     mov        T7,#0x1                                          = FFh\
+          07883e f2 28 50 f0     mov        T0,T7                                            = FFh\
+          078842 f3 f2 3d e5     movb       RL1,DAT_00e53d                                   = FFh\
+          078846 47 f2 3c 00     cmpb       RL1,#0x3c\
+          07884a fd 02           jmpr       cc_ULE,LAB_078850\
+          07884c f7 28 3d e5     movb       DAT_00e53d,T0                                    = FFh\
+                             LAB_078850                                      XREF[1]:     07884a(j)  \
+          078850 6f a8           bset       T01CON.0x6                                       = FFFFh\
+          078852 6f 90           bset       T78CON.0x6                                       = FFFFh\
+          078854 df 14           bset       DAT_00fd28.0xd                                   = FFFFh\
+          078856 e0 02           mov        r2,#0x0\
+          078858 e1 02           movb       RL1,#0x0\
+          07885a f7 f2 59 e5     movb       DAT_00e559,RL1                                   = FFh\
+          07885e e7 f2 46 00     movb       RL1,#0x46\
+          078862 c5 f2 8c fe     movbz      CC6,RL1                                          = FFFFh\
+          078866 1a aa 06 0f     bfldh      CCM1,#0xf,#0x6=>DAT_00f6ff                       = FFFFh\
+                                                                                             = FFh\
+          07886a e1 12           movb       RL1,#0x1\
+          07886c 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078870 a1 20           negb       RL1\
+          078872 49 20           cmpb       RL1,#0x0\
+          078874 dd 02           jmpr       cc_SGE,LAB_07887a\
+          078876 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_07887a                                      XREF[1]:     078874(j)  \
+          07887a 47 f2 45 00     cmpb       RL1,#0x45\
+          07887e 8d 01           jmpr       cc_C,LAB_078882\
+          078880 7f c2           bset       CC6IC.0x7                                        = FFFFh\
+                             LAB_078882                                      XREF[1]:     07887e(j)  \
+          078882 e1 02           movb       RL1,#0x0\
+          078884 f7 f2 5a e5     movb       DAT_00e55a,RL1                                   = FFh\
+          078888 e1 22           movb       RL1,#0x2\
+          07888a c5 f2 94 fe     movbz      CC10,RL1                                         = FFFFh\
+          07888e 1a ab 06 0f     bfldh      CCM2,#0xf,#0x6=>DAT_00f6ff                       = FFFFh\
+                                                                                             = FFh\
+          078892 e1 12           movb       RL1,#0x1\
+          078894 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078898 a1 20           negb       RL1\
+          07889a 49 20           cmpb       RL1,#0x0\
+          07889c dd 02           jmpr       cc_SGE,LAB_0788a2\
+          07889e 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_0788a2                                      XREF[1]:     07889c(j)  \
+          0788a2 49 21           cmpb       RL1,#0x1\
+          0788a4 8d 01           jmpr       cc_C,LAB_0788a8\
+          0788a6 7f c6           bset       CC10IC.0x7                                       = FFFFh\
+                             LAB_0788a8                                      XREF[1]:     0788a4(j)  \
+          0788a8 e1 02           movb       RL1,#0x0\
+          0788aa f7 f2 5b e5     movb       DAT_00e55b,RL1                                   = FFh\
+          0788ae e1 62           movb       RL1,#0x6\
+          0788b0 c5 f2 90 fe     movbz      CC8,RL1                                          = FFFFh\
+          0788b4 0a ab 0f 06     bfldl      CCM2,#0x6,#0xf=>DAT_00f60f                       = FFFFh\
+                                                                                             = FFh\
+          0788b8 e1 12           movb       RL1,#0x1\
+          0788ba 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          0788be a1 20           negb       RL1\
+          0788c0 49 20           cmpb       RL1,#0x0\
+          0788c2 dd 02           jmpr       cc_SGE,LAB_0788c8\
+          0788c4 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_0788c8                                      XREF[1]:     0788c2(j)  \
+          0788c8 49 25           cmpb       RL1,#0x5\
+          0788ca 8d 01           jmpr       cc_C,LAB_0788ce\
+          0788cc 7f c4           bset       CC8IC.0x7                                        = FFFFh\
+                             LAB_0788ce                                      XREF[1]:     0788ca(j)  \
+          0788ce e1 02           movb       RL1,#0x0\
+          0788d0 f7 f2 5c e5     movb       DAT_00e55c,RL1                                   = FFh\
+          0788d4 e1 a2           movb       RL1,#0xa\
+          0788d6 c5 f2 96 fe     movbz      CC11,RL1                                         = FFFFh\
+          0788da 1a ab 60 f0     bfldh      CCM2,#0xf0,#0x60=>DAT_00660f                     = FFFFh\
+                                                                                             = 70h    p\
+          0788de e1 12           movb       RL1,#0x1\
+          0788e0 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          0788e4 a1 20           negb       RL1\
+          0788e6 49 20           cmpb       RL1,#0x0\
+          0788e8 dd 02           jmpr       cc_SGE,LAB_0788ee\
+          0788ea 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_0788ee                                      XREF[1]:     0788e8(j)  \
+          0788ee 47 f2 09 00     cmpb       RL1,#0x9\
+          0788f2 8d 01           jmpr       cc_C,LAB_0788f6\
+          0788f4 7f c7           bset       CC11IC.0x7                                       = FFFFh\
+                             LAB_0788f6                                      XREF[1]:     0788f2(j)  \
+          0788f6 e1 02           movb       RL1,#0x0\
+          0788f8 f7 f2 5d e5     movb       DAT_00e55d,RL1                                   = FFh\
+          0788fc e7 f2 1e 00     movb       RL1,#0x1e\
+          078900 c5 f2 8e fe     movbz      CC7,RL1                                          = FFFFh\
+          078904 1a aa 60 f0     bfldh      CCM1,#0xf0,#0x60=>DAT_0066ff                     = FFFFh\
+          078908 e1 12           movb       RL1,#0x1\
+          07890a 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          07890e a1 20           negb       RL1\
+          078910 49 20           cmpb       RL1,#0x0\
+          078912 dd 02           jmpr       cc_SGE,LAB_078918\
+          078914 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_078918                                      XREF[1]:     078912(j)  \
+          078918 47 f2 1d 00     cmpb       RL1,#0x1d\
+          07891c 8d 01           jmpr       cc_C,LAB_078920\
+          07891e 7f c3           bset       CC7IC.0x7                                        = FFFFh\
+                             LAB_078920                                      XREF[1]:     07891c(j)  \
+          078920 e1 02           movb       RL1,#0x0\
+          078922 f7 f2 5e e5     movb       DAT_00e55e,RL1                                   = FFh\
+          078926 e7 f2 32 00     movb       RL1,#0x32\
+          07892a c5 f2 92 fe     movbz      CC9,RL1                                          = FFFFh\
+          07892e 0a ab f0 60     bfldl      CCM2,#0x60,#0xf0=>PTR_caseD_0_0066f0             = FFFFh\
+                                                                                             = 030000\
+          078932 e1 12           movb       RL1,#0x1\
+          078934 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078938 a1 20           negb       RL1\
+          07893a 49 20           cmpb       RL1,#0x0\
+          07893c dd 02           jmpr       cc_SGE,LAB_078942\
+          07893e 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_078942                                      XREF[1]:     07893c(j)  \
+          078942 47 f2 31 00     cmpb       RL1,#0x31\
+          078946 8d 01           jmpr       cc_C,LAB_07894a\
+          078948 7f c5           bset       CC9IC.0x7                                        = FFFFh\
+                             LAB_07894a                                      XREF[1]:     078946(j)  \
+          07894a e0 01           mov        r1,#0x0\
+          07894c 2d 02           jmpr       cc_EQ,LAB_078952\
+          07894e 3f ea           bset       P8.0x3                                           = FFFFh\
+          078950 0d 01           jmpr       cc_UC,LAB_078954\
+                             LAB_078952                                      XREF[1]:     07894c(j)  \
+          078952 3e ea           bclr       P8.offset DAT_00fff7                             = FFFFh\
+                                                                                             = FFh\
+                             LAB_078954                                      XREF[1]:     078950(j)  \
+          078954 f2 f1 50 f0     mov        r1,T7                                            = FFh\
+          078958 28 11           sub        r1,#0x1\
+          07895a f6 f1 66 fe     mov        CC19,r1                                          = FFFFh\
+          07895e 1a 91 50 f0     bfldh      CCM4,#0xf0,#0x50=>DAT_005fff                     = FFFFh\
+                                                                                             = FFh\
+          078962 e6 f1 70 00     mov        r1,#0x70\
+          078966 f6 f1 66 f1     mov        CC19IC,r1                                        = FFFFh\
+          07896a e6 33 05 00     mov        CC19,#0x5                                        = FFFFh\
+          07896e 42 33 50 f0     cmp        CC19,T7                                          = FFFFh\
+                                                                                             = FFh\
+          078972 ed 07           jmpr       cc_UGT,LAB_078982\
+          078974 d1 80           extr       #0x1\
+          078976 7f b3           bset       CC19IC.0x7                                       = FFFFh\
+          078978 e0 01           mov        r1,#0x0\
+          07897a 2d 02           jmpr       cc_EQ,LAB_078980\
+          07897c 3e ea           bclr       P8.offset DAT_00fff7                             = FFFFh\
+                                                                                             = FFh\
+          07897e 0d 01           jmpr       cc_UC,LAB_078982\
+                             LAB_078980                                      XREF[1]:     07897a(j)  \
+          078980 3f ea           bset       P8.0x3                                           = FFFFh\
+                             LAB_078982                                      XREF[2]:     078972(j), 07897e(j)  \
+          078982 e0 11           mov        r1,#0x1\
+          078984 f4 21 7d 43     movb       RL1,[r1+#0x437d]=>DAT_00437e                     = FFh\
+          078988 f7 f2 77 e5     movb       DAT_00e577,RL1                                   = FFh\
+          07898c 1a 93 80 f0     bfldh      CCM6,#0xf0,#0x80=>DAT_008fff                     = FFFFh\
+                                                                                             = 8Ch\
+          078990 d1 80           extr       #0x1\
+          078992 e7 bb ef 00     movb       CC27IC,#0xef                                     = FFh\
+          078996 ea 00 68 8b     jmpa       cc_UC,LAB_078b68\
+                             LAB_07899a                                      XREF[1]:     078806(j)  \
+          07899a 48 63           cmp        r6,#0x3\
+          07899c ea 30 3e 8b     jmpa       cc_NE,LAB_078b3e\
+          0789a0 e1 32           movb       RL1,#0x3\
+          0789a2 f7 f2 3c e5     movb       DAT_00e53c,RL1                                   = FFh\
+          0789a6 f2 f1 9e fe     mov        r1,CC15                                          = FFFFh\
+          0789aa f6 f1 86 fb     mov        DAT_00fb86,r1                                    = FFFFh\
+          0789ae 20 13           sub        r1,r3\
+          0789b0 f6 f1 84 fb     mov        DAT_00fb84,r1                                    = FFFFh\
+          0789b4 f6 f3 b0 fb     mov        DAT_00fbb0,r3                                    = FFFFh\
+          0789b8 f0 73           mov        r7,r3\
+          0789ba e6 f6 ce 45     mov        r6,#DAT_0045ce                                   = FFFFh\
+          0789be 98 16           mov        r1,[r6+]=>DAT_0045ce                             = FFFFh\
+          0789c0 f6 f1 70 fe     mov        CC24,r1                                          = FFFFh\
+          0789c4 98 46           mov        r4,[r6+]=>DAT_0045d0                             = FFFFh\
+          0789c6 9a 15 02 20     jnb        DAT_00fd2a.0x2,LAB_0789ce                        = FFFFh\
+          0789ca 0a b5 ff 73     bfldl      CRIC,#0x73,#0xff                                 = FFFFh\
+                             LAB_0789ce                                      XREF[1]:     0789c6(j)  \
+          0789ce d1 80           extr       #0x1\
+          0789d0 e6 28 3d 00     mov        T7,#0x3d                                         = FFh\
+          0789d4 f2 28 50 f0     mov        T0,T7                                            = FFh\
+          0789d8 f3 f2 3d e5     movb       RL1,DAT_00e53d                                   = FFh\
+          0789dc 47 f2 3c 00     cmpb       RL1,#0x3c\
+          0789e0 ed 02           jmpr       cc_UGT,LAB_0789e6\
+          0789e2 f7 28 3d e5     movb       DAT_00e53d,T0                                    = FFh\
+                             LAB_0789e6                                      XREF[1]:     0789e0(j)  \
+          0789e6 6f a8           bset       T01CON.0x6                                       = FFFFh\
+          0789e8 6f 90           bset       T78CON.0x6                                       = FFFFh\
+          0789ea df 14           bset       DAT_00fd28.0xd                                   = FFFFh\
+          0789ec e0 02           mov        r2,#0x0\
+          0789ee e1 02           movb       RL1,#0x0\
+          0789f0 f7 f2 59 e5     movb       DAT_00e559,RL1                                   = FFh\
+          0789f4 e7 f2 46 00     movb       RL1,#0x46\
+          0789f8 c5 f2 8c fe     movbz      CC6,RL1                                          = FFFFh\
+          0789fc 1a aa 06 0f     bfldh      CCM1,#0xf,#0x6=>DAT_00f6ff                       = FFFFh\
+                                                                                             = FFh\
+          078a00 e7 f2 3d 00     movb       RL1,#0x3d\
+          078a04 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078a08 a1 20           negb       RL1\
+          078a0a 49 20           cmpb       RL1,#0x0\
+          078a0c dd 02           jmpr       cc_SGE,LAB_078a12\
+          078a0e 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_078a12                                      XREF[1]:     078a0c(j)  \
+          078a12 47 f2 09 00     cmpb       RL1,#0x9\
+          078a16 8d 01           jmpr       cc_C,LAB_078a1a\
+          078a18 7f c2           bset       CC6IC.0x7                                        = FFFFh\
+                             LAB_078a1a                                      XREF[1]:     078a16(j)  \
+          078a1a e1 02           movb       RL1,#0x0\
+          078a1c f7 f2 5a e5     movb       DAT_00e55a,RL1                                   = FFh\
+          078a20 e7 f2 5a 00     movb       RL1,#0x5a\
+          078a24 c5 f2 94 fe     movbz      CC10,RL1                                         = FFFFh\
+          078a28 1a ab 06 0f     bfldh      CCM2,#0xf,#0x6=>DAT_00f6ff                       = FFFFh\
+                                                                                             = FFh\
+          078a2c e7 f2 3d 00     movb       RL1,#0x3d\
+          078a30 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078a34 a1 20           negb       RL1\
+          078a36 49 20           cmpb       RL1,#0x0\
+          078a38 dd 02           jmpr       cc_SGE,LAB_078a3e\
+          078a3a 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_078a3e                                      XREF[1]:     078a38(j)  \
+          078a3e 47 f2 1d 00     cmpb       RL1,#0x1d\
+          078a42 8d 01           jmpr       cc_C,LAB_078a46\
+          078a44 7f c6           bset       CC10IC.0x7                                       = FFFFh\
+                             LAB_078a46                                      XREF[1]:     078a42(j)  \
+          078a46 e1 02           movb       RL1,#0x0\
+          078a48 f7 f2 5b e5     movb       DAT_00e55b,RL1                                   = FFh\
+          078a4c e7 f2 6e 00     movb       RL1,#0x6e\
+          078a50 c5 f2 90 fe     movbz      CC8,RL1                                          = FFFFh\
+          078a54 0a ab 0f 06     bfldl      CCM2,#0x6,#0xf=>DAT_00f60f                       = FFFFh\
+                                                                                             = FFh\
+          078a58 e7 f2 3d 00     movb       RL1,#0x3d\
+          078a5c 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078a60 a1 20           negb       RL1\
+          078a62 49 20           cmpb       RL1,#0x0\
+          078a64 dd 02           jmpr       cc_SGE,LAB_078a6a\
+          078a66 07 f2 78 00     addb       RL1,#0x78\
+                             LAB_078a6a                                      XREF[1]:     078a64(j)  \
+          078a6a 47 f2 31 00     cmpb       RL1,#0x31\
+          078a6e 8d 01           jmpr       cc_C,LAB_078a72\
+          078a70 7f c4           bset       CC8IC.0x7                                        = FFFFh\
+                             LAB_078a72                                      XREF[1]:     078a6e(j)  \
+          078a72 e1 02           movb       RL1,#0x0\
+          078a74 f7 f2 5c e5     movb       DAT_00e55c,RL1                                   = FFh\
+          078a78 e1 a2           movb       RL1,#0xa\
+          078a7a c5 f2 96 fe     movbz      CC11,RL1                                         = FFFFh\
+          078a7e 1a ab 60 f0     bfldh      CCM2,#0xf0,#0x60=>DAT_00660f                     = FFFFh\
+                                                                                             = 70h    p\
+          078a82 e7 f2 3d 00     movb       RL1,#0x3d\
+          078a86 23 f2 50 fe     subb       RL1,T0                                           = FFh\
+          078a8a a1 20           negb       RL1\
+          078a8c 49 20           cmpb       RL1,#0x0\
+          078a8e dd 02           jmpr       cc_SGE,LAB_078a94\

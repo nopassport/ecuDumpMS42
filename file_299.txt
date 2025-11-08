@@ -1,0 +1,640 @@
+          0485d0 50 81           xor        r8,r1\
+          0485d2 39 01           subcb      RL0,#0x1\
+          0485d4 59 01           xorb       RL0,#0x1\
+          0485d6 40 01           cmp        r0,r1\
+          0485d8 60 01           and        r0,r1\
+          0485da 40 01           cmp        r0,r1\
+          0485dc 60 01           and        r0,r1\
+          0485de 40 01           cmp        r0,r1\
+          0485e0 60 01           and        r0,r1\
+          0485e2 33 81 53 81     subcb      P0H,DAT_008153                                   = FFFFh\
+                                                                                             = 02h\
+          0485e6 23 15 22 15     subb       DAT_00fe2a,LAB_001522                            = FFh\
+          0485ea 00 00           add        r0,r0\
+          0485ec 01 83           addb       RL4,RH1\
+          0485ee 05 83 03 83     addb       LAB_008302+1,P1H                                 = FFFFh\
+          0485f2 06 83 02 83     add        P1H,#0x8302                                      = FFFFh\
+          0485f6 04 83 29 15     add        LAB_001528+1,P1H                                 = FFFFh\
+          0485fa 25 15 00 00     subb       0x0,DAT_00fe2a                                   = FFh\
+          0485fe 00 80           add        r8,r0\
+          048600 00 80           add        r8,r0\
+          048602 c8 00           mov        [r0],[r0]\
+          048604 00 ff           add        r15,r15\
+          048606 33 33 66 66     subcb      CC19,DAT_006666                                  = FFFFh\
+                                                                                             = 8015h\
+          04860a 7f 0a           bset       DAT_00fd14.0x7                                   = FFFFh\
+          04860c b6              ??         B6h\
+          04860d 13              ??         13h\
+                             LAB_04860e                                      XREF[1]:     048674(j)  \
+          04860e aa              ??         AAh\
+          04860f 08              ??         08h\
+          048610 e0 11           mov        r1,#0x1\
+          048612 88 1d           mov        [-r13],r1\
+          048614 00 00           add        r0,r0\
+          048616 20 1c           sub        r1,r12\
+          048618 01 00           addb       RL0,RL0\
+          04861a 28 23           sub        r2,#0x3\
+          04861c 84 03 10 0e     mov        [r3],LAB_000e0e+2\
+          048620 70 62           or         r6,r2\
+          048622 ff ff           bset       r15.0xf\
+          048624 ff ff           bset       r15.0xf\
+          048626 27 5c 37 09     subb       DAT_00feb8,#0x37                                 = FFh\
+          04862a 00 32           add        r3,r2\
+          04862c 00 00           add        r0,r0\
+          04862e 00 00           add        r0,r0\
+          048630 06 01 88 01     add        DPP1,#0x188=>DAT_000187                          = FFFFh\
+                                                                                             = 02h\
+          048634 06 01 c9 01     add        DPP1,#0x1c9=>DAT_000350                          = FFFFh\
+                                                                                             = FFh\
+          048638 48 01           cmp        r0,#0x1\
+          04863a 06 02 ff ff     add        DPP2,#0xffff=>DAT_00fffd+1                       = FFFFh\
+          04863e 27 01 79 00     subb       DPP1,#0x79                                       = FFFFh\
+          048642 ea 00 28 00     jmpa       cc_UC,FUN_040028                                 undefined FUN_040028(void)\
+                             -- Flow Override: CALL_RETURN (CALL_TERMINATOR)\
+          048646 0c 00           rol        r0,r0\
+          048648 00 80           add        r8,r0\
+          04864a 00 80           add        r8,r0\
+          04864c ff ff           bset       r15.0xf\
+          04864e ff ff           bset       r15.0xf\
+          048650 ff ff           bset       r15.0xf\
+          048652 ff ff           bset       r15.0xf\
+          048654 00 d0           add        r13,r0\
+          048656 00 30           add        r3,r0\
+          048658 06 01 48 a1     add        DPP1,#0xa148=>PTR_DAT_00a147                     = FFFFh\
+                                                                                             = 00c8f4\
+          04865c b8 1e           mov        [r14],r1\
+          04865e 66 06 7b 94     and        MDH,#DAT_00947b                                  = FFh\
+                                                                                             = 79h\
+          048662 cd 8c           jmpr       cc_SLT,LAB_04857a+2\
+          048664 8f 22           bset       DAT_00fd44.0x8                                   = FFFFh\
+          048666 60 09           and        r0,r9\
+          048668 ae c7           bclr       CC11IC.offset DAT_00fbff                         = FFFFh\
+                                                                                             = FFh\
+                             LAB_04866a+2                                    XREF[0,1]:   04871e(j)  \
+          04866a 52 38 cd 4c     xor        CC24,DAT_004ccd                                  = FFFFh\
+                                                                                             = FFh\
+          04866e 0a 00 e8 fd     bfldl      DAT_00fd00,#0xfd,#0xe8=>DAT_00ffe8               = FFFFh\
+                                                                                             = FFh\
+          048672 5c 0f           shl        r15,#0x0\
+          048674 cd cc           jmpr       cc_SLT,LAB_04860e\
+          048676 cd 4c           jmpr       cc_SLT,LAB_048710\
+          048678 66 26 85 6b     and        DAT_00fe4c,#DAT_006b85                           = FFh\
+          04867c f6 88 41 00     mov        DAT_000041,MDC                                   = 05h\
+                                                                                             = FFh\
+          048680 79 01           orb        RL0,#0x1\
+          048682 79 01           orb        RL0,#0x1\
+          048684 38 31           subc       r3,#0x1\
+          048686 48 3f           cmp        r3,[r3+]\
+          048688 c8 00           mov        [r0],[r0]\
+          04868a 78 05           or         r0,#0x5\
+          04868c c8 00           mov        [r0],[r0]\
+          04868e 00 00           add        r0,r0\
+          048690 b8 0b           mov        [r11],r0\
+          048692 bf 0e           bset       DAT_00fd1c.0xb                                   = FFFFh\
+          048694 16 00 6e 12     addc       DPP0,#0x126e                                     = FFh\
+          048698 80 02           cmpi1      r2,#0x0\
+          04869a 20 03           sub        r0,r3\
+          04869c 3c 00           ror        r0,#0x0\
+          04869e 87              ??         87h\
+          04869f 05              ??         05h\
+          0486a0 b0 03           cmpd2      r3,#0x0\
+          0486a2 ff 03           bset       DAT_00fd06.0xf                                   = FFFFh\
+          0486a4 ff 03           bset       DAT_00fd06.0xf                                   = FFFFh\
+          0486a6 0f 00           bset       DAT_00fd00.0x0                                   = FFFFh\
+          0486a8 96              ??         96h\
+          0486a9 00              ??         00h\
+          0486aa 90 01           cmpi2      r1,#0x0\
+          0486ac 05 00 21 00     addb       PTR_DAT_000021,DPP0                              = 00c405\
+                                                                                             = FFh\
+          0486b0 4f 23           bset       DAT_00fd46.0x4                                   = FFFFh\
+          0486b2 07 0a de 1d     addb       STKOV,#0xde                                      = FFFFh\
+          0486b6 55 15 44 04     xorb       DAT_000444,DAT_00fe2a                            = FFh\
+          0486ba 22 22 6e 00     sub        T4,DAT_00006e                                    = FFFFh\
+                                                                                             = 0110h\
+          0486be 9e 00           bclr       DAT_00fd00.offset DAT_00fdfe+1                   = FFFFh\
+          0486c0 bf 00           bset       DAT_00fd00.offset DAT_00fdfe+1                   = FFFFh\
+          0486c2 00 a0           add        r10,r0\
+          0486c4 cd 0c           jmpr       cc_SLT,LAB_0486de\
+          0486c6 00 80           add        r8,r0\
+          0486c8 11 00           addcb      RL0,RL0\
+          0486ca 12 01 c5 00     addc       DPP1,DAT_0000c4+1                                = FFFFh\
+          0486ce 00 01           add        r0,r1\
+          0486d0 00 01           add        r0,r1\
+          0486d2 48 01           cmp        r0,#0x1\
+          0486d4 37 0a 96 00     subcb      STKOV,#0x96                                      = FFFFh\
+          0486d8 0a 00 32 00     bfldl      DAT_00fd00,#0x0,#0x32=>DAT_00fd32                = FFFFh\
+          0486dc bc 02           ashr       r2,#0x0\
+                             LAB_0486de                                      XREF[1]:     0486c4(j)  \
+          0486de 18 01           addc       r0,#0x1\
+          0486e0 0a 00 f4 01     bfldl      DAT_00fd00,#0x1,#0xf4=>DAT_00fdf4                = FFFFh\
+          0486e4 20 03           sub        r0,r3\
+          0486e6 0c 00           rol        r0,r0\
+          0486e8 20 00           sub        r0,r0\
+          0486ea dc 05           exts       r5, #0x1\
+          0486ec 00 00           add        r0,r0\
+          0486ee 84 03 dc 05     mov        [r3],DAT_0005dc                                  = FFFFh\
+          0486f2 20 1c           sub        r1,r12\
+          0486f4 50 00           xor        r0,r0\
+          0486f6 12 00 20 03     addc       DPP0,DAT_000320                                  = FFh\
+                                                                                             = FFFFh\
+          0486fa 07 00 fd 2c     addb       DPP0,#0xfd                                       = FFh\
+          0486fe 89 08           movb       [-r8],RL0\
+          048700 11 07           addcb      RL0,RH3\
+          048702 8f 02           bset       DAT_00fd04.0x8                                   = FFFFh\
+          048704 8c              ??         8Ch\
+          048705 1d              ??         1Dh\
+          048706 3a 0d af 19     bmovn      DAT_00ff5e.0x9,DAT_00fd1a.offset DAT_00fdfe+1    = FFFFh\
+          04870a 66 86 45 04     and        BUSCON0,#DAT_000445                              = FFFFh\
+          04870e f9              ??         F9h\
+          04870f 05              ??         05h\
+                             LAB_048710                                      XREF[1]:     048676(j)  \
+          048710 ae 7f           bclr       DAT_00fdfe.offset DAT_00fbff                     = FFFFh\
+                                                                                             = FFh\
+          048712 f6 08 ae 7f     mov        DAT_007fae,CP                                    = FFFFh\
+          048716 f6 08 42 00     mov        DAT_000042,CP                                    = 00E4h\
+                                                                                             = FFFFh\
+          04871a 00 28           add        r2,r8\
+          04871c 00 02           add        r0,r2\
+          04871e 9a 19 a5 00     jnb        DAT_00fd32.0x0,LAB_04866a+2                      = FFFFh\
+          048722 00 00           add        r0,r0\
+          048724 dc 05           exts       r5, #0x1\
+          048726 b8 0b           mov        [r11],r0\
+          048728 b8 0b           mov        [r11],r0\
+          04872a 7c 0a           shr        r10,#0x0\
+          04872c bb 04           callr      FUN_048736                                       undefined FUN_048736(void)\
+          04872e b5              ??         B5h\
+          04872f 0d              ??         0Dh\
+          048730 14 01 e0 01     addc       PTR_LAB_0001df+1,DPP1                            = FFFFh\
+          048734 b0 04           cmpd2      r4,#0x0\
+                             **************************************************************\
+                             *                          FUNCTION                          *\
+                             **************************************************************\
+                               undefined __stdcall FUN_048736(void)\
+             undefined         <UNASSIGNED>   <RETURN>\
+                             FUN_048736                                      XREF[1]:     04872c(c)  \
+          048736 e8 03           mov        [r0],[r3+]\
+          048738 bc 02           ashr       r2,#0x0\
+          04873a ee 02           bclr       DAT_00fd04.offset DAT_00bfff                     = FFFFh\
+          04873c a0 00           cmpd1      r0,#0x0\
+          04873e 02 00 90 01     add        DPP0,PTR_LAB_00018f+1                            = FFh\
+          048742 01 00           addb       RL0,RL0\
+          048744 01 00           addb       RL0,RL0\
+          048746 0a 00 14 00     bfldl      DAT_00fd00,#0x0,#0x14=>BUSCON1                   = FFFFh\
+          04874a 26 02 78 05     sub        DPP2,#0x578=>DAT_00fa86+1                        = FFFFh\
+          04874e 9a              ??         9Ah\
+          04874f 10              ??         10h\
+          048750 b2              ??         B2h\
+          048751 0c              ??         0Ch\
+          048752 32 00 64 00     subc       DPP0,SUB_000064                                  = FFh\
+                                                                                             = 05FAh\
+          048756 1e 00           bclr       DAT_00fd00.offset DAT_00fffd                     = FFFFh\
+          048758 f4 01 ff ff     movb       RL0,[r1+#0xffff]\
+          04875c 07 00 10 00     addb       DPP0,#0x10                                       = FFh\
+          048760 96              ??         96h\
+          048761 00              ??         00h\
+          048762 60 09           and        r0,r9\
+          048764 27 00 50 00     subb       DPP0,#0x50                                       = FFh\
+          048768 b0 04           cmpd2      r4,#0x0\
+          04876a 31 00           subcb      RL0,RL0\
+          04876c 32 00 64 00     subc       DPP0,SUB_000064                                  = FFh\
+                                                                                             = 05FAh\
+          048770 84 03 1e 00     mov        [r3],DAT_00001d+1\
+          048774 58 02           xor        r0,#0x2\
+          048776 64 00 e8 03     and        DAT_0003e8,DPP0                                  = FFFFh\
+                                                                                             = FFh\
+          04877a 96              ??         96h\
+          04877b 00              ??         00h\
+          04877c 90 01           cmpi2      r1,#0x0\
+          04877e c8 00           mov        [r0],[r0]\
+          048780 64 00 fa 00     and        DAT_0000fa,DPP0                                  = 9Ch\
+                                                                                             = FFh\
+          048784 80 0c           cmpi1      r12,#0x0\
+          048786 f0 0a           mov        r0,r10\
+          048788 04 0b e8 fd     add        DAT_00fde8,STKUN                                 = FFFFh\
+          04878c bc 02           ashr       r2,#0x0\
+          04878e 01 00           addb       RL0,RL0\
+          048790 64 00 0d 00     and        PTR_DAT_00000d,DPP0                              = 00b005\
+                                                                                             = FFh\
+          048794 96              ??         96h\
+          048795 00              ??         00h\
+          048796 58 02           xor        r0,#0x2\
+          048798 94              ??         94h\
+          048799 11              ??         11h\
+          04879a 0a 00 05 00     bfldl      DAT_00fd00,#0x0,#0x5=>P1L+1                      = FFFFh\
+          04879e 7a 3f 88 13     bxor       MDC.0x3,DAT_00fd7e.0x1                           = FFh\
+                                                                                             = FFFFh\
+          0487a2 f4 01 f4 01     movb       RL0,[r1+#DAT_0001f4]                             = 05FAh\
+          0487a6 7a 3f 88 13     bxor       MDC.0x3,DAT_00fd7e.0x1                           = FFh\
+                                                                                             = FFFFh\
+          0487aa 78 00           or         r0,#0x0\
+          0487ac e8 03           mov        [r0],[r3+]\
+          0487ae c8 00           mov        [r0],[r0]\
+          0487b0 00 00           add        r0,r0\
+          0487b2 00 00           add        r0,r0\
+          0487b4 ea 00 3c 00     jmpa       cc_UC,LAB_04003c\
+          0487b8 29 1c           subb       RH0,[r0+]\
+          0487ba 0a 17 0a 00     bfldl      DAT_00fd2e,#0x0,#0xa=>DAT_00ff0a                 = FFFFh\
+          0487be ff ff           bset       r15.0xf\
+          0487c0 00 00           add        r0,r0\
+          0487c2 a0 00           cmpd1      r0,#0x0\
+          0487c4 3c 00           ror        r0,#0x0\
+          0487c6 c3              ??         C3h\
+          0487c7 f5              ??         F5h\
+          0487c8 00 40           add        r4,r0\
+          0487ca 01 00           addb       RL0,RL0\
+          0487cc 05 00 a4 00     addb       DAT_0000a3+1,DPP0                                = FFh\
+          0487d0 8f 02           bset       DAT_00fd04.0x8                                   = FFFFh\
+          0487d2 00 18           add        r1,r8\
+          0487d4 cd 00           jmpr       cc_SLT,LAB_0487d6\
+                             LAB_0487d6                                      XREF[1]:     0487d4(j)  \
+          0487d6 cd 0c           jmpr       cc_SLT,LAB_0487f0\
+          0487d8 cd 0c           jmpr       cc_SLT,LAB_0487f0+2\
+          0487da 20 01           sub        r0,r1\
+          0487dc 00 18           add        r1,r8\
+          0487de cb              ??         CBh\
+          0487df 2d              ??         2Dh    -\
+          0487e0 7d 00           jmpr       cc_NN,LAB_0487e2\
+                             LAB_0487e2                                      XREF[1]:     0487e0(j)  \
+          0487e2 64 80 9c 7f     and        DAT_007f9c,P0L                                   = FFFFh\
+          0487e6 89 01           movb       [-r1],RL0\
+          0487e8 66 a6 48 61     and        DAT_00ff4c,#DAT_006148                           = FFFFh\
+          0487ec 19 00           addcb      RL0,#0x0\
+          0487ee 4b 00           div        r0\
+                             LAB_0487f0+2                                    XREF[1,1]:   0487d6(j), 0487d8(j)  \
+                             LAB_0487f0\
+          0487f0 66 02 33 03     and        DPP2,#DAT_000333                                 = FFFFh\
+                                                                                             = FFh\
+          0487f4 00 04           add        r0,r4\
+          0487f6 a0 00           cmpd1      r0,#0x0\
+          0487f8 c5 00 1f 05     movbz      DAT_00051e+1,DPP0                                = FFh\
+          0487fc 33 33 32 00     subcb      CC19,DAT_000032                                  = FFFFh\
+                                                                                             = 00D4h\
+          048800 3c 00           ror        r0,#0x0\
+          048802 fa 00 7e 18     jmps       LAB_00187e\
+          048806 19 00           addcb      RL0,#0x0\
+          048808 40 00           cmp        r0,r0\
+          04880a 00 64           add        r6,r4\
+          04880c 80 0c           cmpi1      r12,#0x0\
+          04880e 0a 00 00 32     bfldl      DAT_00fd00,#0x32,#0x0=>P0L                       = FFFFh\
+          048812 00 28           add        r2,r8\
+          048814 00 0d           add        r0,r13\
+          048816 00 05           add        r0,r5\
+          048818 00 00           add        r0,r0\
+          04881a 00 80           add        r8,r0\
+          04881c 00 80           add        r8,r0\
+          04881e 00 00           add        r0,r0\
+          048820 cd 00           jmpr       cc_SLT,LAB_048822\
+                             LAB_048822                                      XREF[1]:     048820(j)  \
+          048822 22 02 ff 03     sub        DPP2,DAT_0003ff                                  = FFFFh\
+          048826 44              ??         44h    D\
+          048827 00              ??         00h\
+          048828 0c 02           rol        r0,r2\
+          04882a 9a 19 22 00     jnb        DAT_00fd32.0x0,LAB_048872                        = FFFFh\
+          04882e 89 00           movb       [-r0],RL0\
+          048830 70 00           or         r0,r0\
+          048832 55 05 00 07     xorb       LAB_000700,DAT_00fe0a                            = FFFFh\
+          048836 07 00 1e 00     addb       DPP0,#0x1e                                       = FFh\
+          04883a 0a 00 e8 03     bfldl      DAT_00fd00,#0x3,#0xe8=>DAT_00ffe8                = FFFFh\
+                                                                                             = FFh\
+          04883e 8a              ??         8Ah\
+          04883f 1b              ??         1Bh\
+          048840 ff 05           bset       DAT_00fd0a.0xf                                   = FFFFh\
+          048842 02 03 fd 06     add        DPP3,LAB_0006fa+3                                = FFFFh\
+          048846 0a 08 00 32     bfldl      DAT_00fd10,#0x32,#0x0=>P0L                       = FFFFh\
+          04884a 19 fc           addcb      RH7,[r0+]\
+          04884c fb              ??         FBh\
+          04884d 0f              ??         0Fh\
+          04884e e2 e7 80 64     pcall      DP6,FUN_046480                                   = FFFFh\
+                                                                                             undefined FUN_046480(void)\
+          048852 64 04 02 00     and        0x2,CSP                                          = FFFFh\
+                             LAB_048856                                      XREF[1]:     04891c(j)  \
+          048856 f9              ??         F9h\
+          048857 32              ??         32h    2\
+          048858 7f 80           bset       P0L.0x7                                          = FFFFh\
+          04885a f6              ??         F6h\
+          04885b ff              ??         FFh\
+                             LAB_04885c                                      XREF[1]:     0488b4(j)  \
+          04885c e2 48 00 00     pcall      CC8,FUN_040000                                   = FFFFh\
+                                                                                             undefined FUN_040000(void)\
+          048860 f6 69 00 00     mov        0x0,DAT_00fed2                                   = FFFFh\
+          048864 c8 2e           mov        [r2],[r14]\
+          048866 00 00           add        r0,r0\
+          048868 00 dc           add        r13,r12\
+          04886a 00 00           add        r0,r0\
+          04886c 40 f8           cmp        r15,r8\
+          04886e 01 20           addb       RL1,RL0\
+          048870 00 00           add        r0,r0\
+                             LAB_048872                                      XREF[1]:     04882a(j)  \
+          048872 00 0a           add        r0,r10\
+          048874 01 00           addb       RL0,RL0\
+          048876 00 f6           add        r15,r6\
+          048878 10 01           addc       r0,r1\
+          04887a 01 01           addb       RL0,RH0\
+          04887c 01 01           addb       RL0,RH0\
+          04887e 01 01           addb       RL0,RH0\
+          048880 01 01           addb       RL0,RH0\
+          048882 01 01           addb       RL0,RH0\
+          048884 01 01           addb       RL0,RH0\
+          048886 01 01           addb       RL0,RH0\
+          048888 01 10           addb       RH0,RL0\
+          04888a 01 01           addb       RL0,RH0\
+          04888c 01 01           addb       RL0,RH0\
+                             LAB_04888e                                      XREF[1]:     048928(j)  \
+          04888e 01 01           addb       RL0,RH0\
+          048890 01 01           addb       RL0,RH0\
+          048892 01 01           addb       RL0,RH0\
+          048894 01 01           addb       RL0,RH0\
+          048896 01 01           addb       RL0,RH0\
+          048898 01 01           addb       RL0,RH0\
+          04889a 03 3e 7d bb     addb       CC30,DAT_00bb7d                                  = FFFFh\
+                                                                                             = FFh\
+          04889e 03 40 6b 80     addb       CC0,LAB_008068+3                                 = FFFFh\
+          0488a2 08 14           add        r1,#0x4\
+          0488a4 1e 26           bclr       DAT_00fd4c.offset DAT_00fffd                     = FFFFh\
+                             LAB_0488a6+2                                    XREF[0,1]:   04892e(j)  \
+          0488a6 32 4c 71 96     subc       CC12,DAT_009671                                  = FFFFh\
+                                                                                             = 0845h\
+          0488aa c2 04 00 33     movbz      CSP,DAT_003300                                   = FFFFh\
+                                                                                             = FFh\
+          0488ae 80 ff           cmpi1      r15,#0xf\
+          0488b0 06 30 55 88     add        CC16,#0x8855=>LAB_008854                         = FFh\
+          0488b4 ad d3           jmpr       cc_SGT,LAB_04885c\
+          0488b6 f9              ??         F9h\
+          0488b7 06              ??         06h\
+          0488b8 76 8a 9e a8     or         BUSCON1,#DAT_00a89e                              = FFFFh\
+                                                                                             = F0h\
+          0488bc b2              ??         B2h\
+          0488bd bc              ??         BCh\
+          0488be 08 17           add        r1,#0x7\
+          0488c0 23 30 49 62     subb       CC16,DAT_006249                                  = FFh\
+          0488c4 88 ba           mov        [-r10],r11\
+          0488c6 ec 04           push       CSP                                              = FFFFh\
+          0488c8 00 0c           add        r0,r12\
+          0488ca 12 18 08 18     addc       PW0,LAB_001808                                   = FFh\
+          0488ce 25 33 40 4d     subb       DAT_004d40,CC19                                  = FFFFh\
+          0488d2 68 90           and        r9,#0x0\
+          0488d4 b8 05           mov        [r5],r0\
+          0488d6 05 0a 14 19     addb       LAB_001914,STKOV                                 = FFFFh\
+          0488da 1e 04           bclr       DAT_00fd08.offset DAT_00fffd                     = FFFFh\
+                             LAB_0488dc                                      XREF[1]:     048954(j)  \
+          0488dc 1f 3f           bset       DAT_00fd7e.0x1                                   = FFFFh\
+          0488de 4e a9           bclr       CCM0.offset DAT_00ffef                           = FFFFh\
+                                                                                             = FFh\
+          0488e0 03 16 3f ac     addb       DAT_00fe2c,DAT_00ac3f                            = FFh\
+                                                                                             = 03h\
+          0488e4 06 10 1a 2b     add        DAT_00fe20,#0x2b1a                               = FFh\
+          0488e8 32 3a 6b 04     subc       CC26,DAT_00046b                                  = FFFFh\
+                                                                                             = FFh\
+          0488ec 03 05 0a 1e     addb       DAT_00fe0a,LAB_001e08+2                          = FFFFh\
+          0488f0 06 16 26 32     add        DAT_00fe2c,#0x3226=>DAT_003225                   = FFh\
+                                                                                             = 58h    X\
+          0488f4 4b              ??         4Bh    K\
+          0488f5 64              ??         64h    d\
+          0488f6 af 06           bset       DAT_00fd0c.0xa                                   = FFFFh\
+          0488f8 00 13           add        r1,r3\
+          0488fa 35 57 78 a0     subcb      DAT_00a078,WDT                                   = FAh\
+                                                                                             = FFFFh\
+          0488fe 08 02           add        r0,#0x2\
+          048900 06 09 0b 0e     add        SP,#0xe0b                                        = FFh\
+          048904 12 17 1e 08     addc       DAT_00fe2e,LAB_00081e                            = FFh\
+                             LAB_048908                                      XREF[1]:     0489ce(j)  \
+          048908 25 33 40 4d     subb       DAT_004d40,CC19                                  = FFFFh\
+          04890c 61 75           andb       RH3,RH2\
+          04890e 90 b1           cmpi2      r1,#0xb\
+          048910 10 0f           addc       r0,r15\
+          048912 19 1f           addcb      RH0,[r3+]\
+          048914 26 2f 36 3e     sub        DAT_00fe5e,#0x3e36=>DAT_00c1c9                   = FFFFh\
+                                                                                             = FFh\
+          048918 4e 5e           bclr       DAT_00fdbc.offset DAT_00ffef                     = FFFFh\
+                                                                                             = FFh\
+          04891a 6d 7d           jmpr       cc_N,LAB_048a16\
+                             LAB_04891c                                      XREF[1]:     0489aa(j)  \
+          04891c 8d 9c           jmpr       cc_C,LAB_048856\
+          04891e ac bc           ashr       r11,r12\
+          048920 c3              ??         C3h\
+          048921 04              ??         04h\
+                             LAB_048922                                      XREF[1]:     0489e8(j)  \
+          048922 18 25           addc       r2,#0x5\
+          048924 37 49 04 5e     subcb      CC9,#0x4                                         = FFFFh\
+          048928 6d b2           jmpr       cc_N,LAB_04888e\
+          04892a bc 04           ashr       r4,#0x0\
+          04892c 5e 6d           bclr       DAT_00fdda.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          04892e 7d bc           jmpr       cc_NN,LAB_0488a6+2\
+          048930 03 68 90 b8     addb       DAT_00fed0,DAT_00b890                            = FFFFh\
+                                                                                             = 004Ch\
+          048934 06 09 12 25     add        SP,#0x2512                                       = FFh\
+          048938 37 3b 40 04     subcb      CC27,#0x40                                       = FFFFh\
+          04893c 00 15           add        r1,r5\
+          04893e 2b 40           prior      r4,r0\
+          048940 04 00 2e 5c     add        DAT_005c2e,DPP0                                  = FFFFh\
+                                                                                             = FFh\
+          048944 8c              ??         8Ch\
+          048945 06              ??         06h\
+          048946 18 33           addc       r3,#0x3\
+          048948 4d 68           jmpr       cc_V,LAB_048a1a\
+          04894a 90 b8           cmpi2      r8,#0xb\
+          04894c 03 33 66 ff     addb       CC19,T5IC                                        = FFFFh\
+          048950 06 3f 6d 7d     add        CC31,#0x7d6d=>DAT_007d6c                         = FFFFh\
+          048954 8d c3           jmpr       cc_C,LAB_0488dc\
+          048956 c8 08           mov        [r0],[r8]\
+          048958 0b 1f           mul        r1,r15\
+          04895a 33 47 61 83     subcb      CC7,LAB_008360+1                                 = FFFFh\
+          04895e b8 e0           mov        [r0],r14\
+          048960 08 0b           add        r0,[r3]\
+          048962 1f 33           bset       DAT_00fd66.0x1                                   = FFFFh\
+          048964 47 61 83 b8     cmpb       PECC1,#0x83                                      = FFFFh\
+          048968 e0 04           mov        r4,#0x0\
+          04896a 45              ??         45h    E\
+          04896b 50              ??         50h    P\
+          04896c 60 80           and        r8,r0\
+          04896e 04 45 50 60     add        DAT_006050,CC5                                   = 8080h\
+                                                                                             = FFFFh\
+          048972 80 06           cmpi1      r6,#0x0\
+          048974 40 83           cmp        r8,r3\
+          048976 ab bf           calli      cc_SLE,[r15]\
+          048978 d3              ??         D3h\
+          048979 e0              ??         E0h\
+          04897a 06 68 75 83     add        DAT_00fed0,#0x8375                               = FFFFh\
+          04897e 90 9d           cmpi2      r13,#0x9\
+          048980 ab 04           calli      cc_UC,[r4]\
+          048982 68 75           and        r7,#0x5\
+          048984 83              ??         83h\
+          048985 ab              ??         ABh\
+                             LAB_048986+2                                    XREF[0,1]:   048a4e(j)  \
+          048986 04 ab bf cc     add        DAT_00ccbf,CCM2                                  = FFFFh\
+          04898a e0 04           mov        r4,#0x0\
+          04898c ab bf           calli      cc_SLE,[r15]\
+          04898e cc              ??         CCh\
+          04898f e7              ??         E7h\
+          048990 04 5b 7c 97     add        DAT_00977c,DAT_00feb6                            = EA8Dh\
+                                                                                             = FFFFh\
+          048994 b8 06           mov        [r6],r0\
+          048996 19 26           addcb      RL1,#0x6\
+          048998 2f 38           bset       DAT_00fd70.0x2                                   = FFFFh\
+          04899a 4b              ??         4Bh    K\
+          04899b 64              ??         64h    d\
+          04899c 06 0e 17 20     add        ADDRSEL3,#0x2017                                 = FFFFh\
+                             LAB_0489a0                                      XREF[1]:     048a66(j)  \
+          0489a0 29 32           subb       RH1,#0x2\
+          0489a2 3c 08           ror        r8,#0x0\
+          0489a4 33 40 4d 5b     subcb      CC0,DAT_005b4d                                   = FFFFh\
+                                                                                             = FFh\
+          0489a8 68 83           and        r8,#0x3\
+                             LAB_0489aa                                      XREF[1]:     048a8e(j)  \
+          0489aa 9d b8           jmpr       cc_NC,LAB_04891c\
+          0489ac 08 33           add        r3,#0x3\
+          0489ae 40 4d           cmp        r4,r13\
+          0489b0 5b              ??         5Bh    [\
+          0489b1 68              ??         68h    h\
+          0489b2 83              ??         83h\
+          0489b3 9d              ??         9Dh\
+          0489b4 b8 08           mov        [r8],r0\
+                             LAB_0489b6                                      XREF[1]:     048a7c(j)  \
+          0489b6 0d 13           jmpr       cc_UC,LAB_0489de\
+          0489b8 19 20           addcb      RL1,#0x0\
+          0489ba 2b 34           prior      r3,r4\
+          0489bc 3c 48           ror        r8,#0x4\
+          0489be 08 00           add        r0,#0x0\
+          0489c0 10 18           addc       r1,r8\
+          0489c2 20 30           sub        r3,r0\
+          0489c4 40 58           cmp        r5,r8\
+          0489c6 70 08           or         r0,r8\
+          0489c8 16 1f 27 2f     addc       DAT_00fe3e,#DAT_002f27                           = FFh\
+                                                                                             = F3h\
+          0489cc 3f 5e           bset       DAT_00fdbc.0x3                                   = FFFFh\
+          0489ce 7d 9c           jmpr       cc_NN,LAB_048908\
+          0489d0 08 23           add        r2,#0x3\
+          0489d2 36 49 62 88     subc       CC9,#LAB_008862                                  = FFFFh\
+          0489d6 a1              ??         A1h\
+          0489d7 ba              ??         BAh\
+          0489d8 d3              ??         D3h\
+          0489d9 08              ??         08h\
+          0489da 33 40 4d 5b     subcb      CC0,DAT_005b4d                                   = FFFFh\
+                                                                                             = FFh\
+                             LAB_0489de                                      XREF[1]:     0489b6(j)  \
+          0489de 68 7c           and        r7,[r0+]\
+          0489e0 90 b8           cmpi2      r8,#0xb\
+          0489e2 08 14           add        r1,#0x4\
+          0489e4 1f 2f           bset       DAT_00fd5e.0x1                                   = FFFFh\
+          0489e6 3f 5e           bset       DAT_00fdbc.0x3                                   = FFFFh\
+          0489e8 7d 9c           jmpr       cc_NN,LAB_048922\
+          0489ea bc 08           ashr       r8,#0x0\
+          0489ec 00 00           add        r0,r0\
+          0489ee 00 00           add        r0,r0\
+          0489f0 00 00           add        r0,r0\
+          0489f2 00 00           add        r0,r0\
+          0489f4 04 4d 5b ab     add        DAT_00ab5b,CC13                                  = A758h\
+                                                                                             = FFFFh\
+          0489f8 e0 04           mov        r4,#0x0\
+          0489fa 4e 62           bclr       DAT_00fdc4.offset DAT_00ffef                     = FFFFh\
+                                                                                             = FFh\
+          0489fc 76 89 03 19     or         SYSCON,#0x1903                                   = FFFFh\
+          048a00 27 71 06 16     subb       DAT_00fee2,#0x6                                  = FFh\
+          048a04 2f 3f           bset       DAT_00fd7e.0x2                                   = FFFFh\
+          048a06 5e 7d           bclr       DAT_00fdfa.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          048a08 bc 06           ashr       r6,#0x0\
+          048a0a 12 1c 25 2e     addc       DAT_00fe38,LAB_002e22+3                          = FFFFh\
+          048a0e 37 49 06 19     subcb      CC9,#0x6                                         = FFFFh\
+          048a12 4b              ??         4Bh    K\
+          048a13 70              ??         70h    p\
+          048a14 97              ??         97h\
+          048a15 c9              ??         C9h\
+                             LAB_048a16                                      XREF[1]:     04891a(j)  \
+          048a16 fe 05           bclr       DAT_00fd0a.offset DAT_007ffe+1                   = FFFFh\
+          048a18 1f 29           bset       DAT_00fd52.0x1                                   = FFFFh\
+                             LAB_048a1a                                      XREF[2]:     048948(j), 048ad0(j)  \
+          048a1a 3f 5e           bset       DAT_00fdbc.offset DAT_00ffef                     = FFFFh\
+                                                                                             = FFh\
+          048a1c c8 05           mov        [r0],[r5]\
+          048a1e 17 21 28 37     addcb      T3,#0x28                                         = FFFFh\
+          048a22 44              ??         44h    D\
+          048a23 0a              ??         0Ah\
+          048a24 06 13 1f 29     add        DAT_00fe26,#0x291f                               = FFh\
+          048a28 32 3f 5e 7d     subc       CC31,DAT_007d5e                                  = FFFFh\
+          048a2c 9c c8           jmpi       cc_SLT,[r8]\
+          048a2e 0c 0d           rol        r0,r13\
+                             LAB_048a30+2                                    XREF[0,2]:   048ade(j), 048b16(j)  \
+          048a30 17 21 28 2e     addcb      T3,#0x28                                         = FFFFh\
+                             LAB_048a34+2                                    XREF[0,1]:   048aec(j)  \
+          048a34 33 39 3e 42     subcb      CC25,->P0L                                       = FFFFh\
+                                                                                             = 00ff00\
+          048a38 46 49 4f 06     cmp        CC9,#0x64f                                       = FFFFh\
+          048a3c 18 33           addc       r3,#0x3\
+          048a3e 4d 68           jmpr       cc_V,LAB_048b10\
+          048a40 90 b8           cmpi2      r8,#0xb\
+          048a42 10 10           addc       r1,r0\
+          048a44 16 1c 26 2f     addc       DAT_00fe38,#DAT_002f26                           = FFFFh\
+                                                                                             = E6h\
+          048a48 37 3f 4f 5e     subcb      CC31,#0x4f                                       = FFFFh\
+          048a4c 6d 7d           jmpr       cc_N,LAB_048b48\
+                             LAB_048a4e                                      XREF[1]:     048b32(j)  \
+          048a4e 8d 9c           jmpr       cc_C,LAB_048986+2\
+          048a50 ac bc           ashr       r11,r12\
+          048a52 ca              ??         CAh\
+          048a53 06              ??         06h\
+          048a54 10 35           addc       r3,r5\
+          048a56 53 70 8e cb     xorb       DAT_00fee0,DAT_00cb8e                            = FFFFh\
+                                                                                             = FFh\
+          048a5a 06 10 13 1f     add        DAT_00fe20,#0x1f13                               = FFh\
+                             LAB_048a5e                                      XREF[1]:     048b24(j)  \
+          048a5e 28 30           sub        r3,#0x0\
+          048a60 32 06 1f 2f     subc       MDH,DAT_002f1f                                   = FFh\
+                                                                                             = ECF7h\
+          048a64 3f 5e           bset       DAT_00fdbc.0x3                                   = FFFFh\
+          048a66 7d 9c           jmpr       cc_NN,LAB_0489a0\
+          048a68 06 2f 32 3f     add        DAT_00fe5e,#0x3f32=>DAT_003f31                   = FFFFh\
+                                                                                             = FFh\
+          048a6c 5e 6f           bclr       DAT_00fdde.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          048a6e 74 06 31 32     or         DAT_003230+1,MDH                                 = FFh\
+          048a72 3f 4b           bset       DAT_00fd96.0x3                                   = FFFFh\
+          048a74 5e 5f           bclr       DAT_00fdbe.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          048a76 08 16           add        r1,#0x6\
+          048a78 26 4e 6d 7d     sub        CC14,#DAT_007d6c+1                               = FFFFh\
+          048a7c 8d 9c           jmpr       cc_C,LAB_0489b6\
+          048a7e ac 06           ashr       r0,r6\
+          048a80 66 9a b3 cd     and        DAT_00ff34,#DAT_00cdb3                           = FFFFh\
+                                                                                             = FFh\
+                             LAB_048a84+2                                    XREF[0,1]:   048b6a(j)  \
+          048a84 da ff 04 5b     calls      SUB_ff5b04\
+                             LAB_048a88                                      XREF[1]:     048b4e(j)  \
+          048a88 83              ??         83h\
+          048a89 b8              ??         B8h\
+          048a8a d9 0a           movb       [r0+],[r10]\
+          048a8c 5e 6d           bclr       DAT_00fdda.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          048a8e 7d 8d           jmpr       cc_NN,LAB_0489aa\
+          048a90 9c ac           jmpi       cc_SGT,[r12]\
+          048a92 b2              ??         B2h\
+          048a93 bc              ??         BCh\
+          048a94 c2 c8 06 00     movbz      CC12IC,PTR_DAT_000005+1                          = FFFFh\
+          048a98 05 0b 10 18     addb       LAB_001810,STKUN                                 = FFFFh\
+          048a9c 28 06           sub        r0,#0x6\
+          048a9e 17 59 7d 93     addcb      S0RBUF,#0x7d                                     = FFFFh\
+          048aa2 a9 c0           movb       RL6,[r0]\
+          048aa4 04              ??         04h\
+          048aa5 16              ??         16h\
+                             LAB_048aa6                                      XREF[1]:     048b5c(j)  \
+          048aa6 2f 3b           bset       DAT_00fd76.0x2                                   = FFFFh\
+          048aa8 9c 08           jmpi       cc_UC,[r8]\
+          048aaa 18 33           addc       r3,#0x3\
+          048aac 4d 68           jmpr       cc_V,LAB_048b7e\
+          048aae 83              ??         83h\
+          048aaf 97              ??         97h\
+          048ab0 ab bf           calli      cc_SLE,[r15]\
+          048ab2 0c 11           rol        r1,r1\
+          048ab4 16 1f 27 2f     addc       DAT_00fe3e,#DAT_002f27                           = FFh\
+                                                                                             = F3h\
+          048ab8 3f 4e           bset       DAT_00fd9c.0x3                                   = FFFFh\
+          048aba 5e 7d           bclr       DAT_00fdfa.offset DAT_00ffdf                     = FFFFh\
+                                                                                             = FFh\
+          048abc 9c bc           jmpi       cc_SLE,[r12]\
+          048abe cb              ??         CBh\
+          048abf 06              ??         06h\
+          048ac0 19 26           addcb      RL1,#0x6\
+          048ac2 32 45 64 9c     subc       CC5,DAT_009c64                                   = FFFFh\
+                                                                                             = E1C4h\
+          048ac6 06 0b 25 4a     add        STKUN,#0x4a25=>PTR_DAT_004a24                    = FFFFh\
